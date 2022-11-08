@@ -1,7 +1,7 @@
 # Human-transcriptome-atlas
 ## 1. Data Collecting
-+ High throughput seqeuncing, Homo sapiens에 해당하는 모든 데이터를 [GEO datasets](https://www.ncbi.nlm.nih.gov/gds) 연구대상으로함.(26,794개)
-+ 앞선 26,794개의 데이터 중, 사람과 다른 동물간의 발현차이를 보이는 연구 결과는 제외함.
++ High throughput seqeuncing, Homo sapiens에 해당하며, sample 개수가 6-100개, Gene count table이 담긴 supplementary에 파일이 있는 모든 데이터를 [GEO datasets](https://www.ncbi.nlm.nih.gov/gds) 연구대상으로함.(18,676)
++ 앞선 18,676개의 데이터 중, 사람과 다른 동물간의 발현차이를 보이는 연구 결과는 제외함.
 ### 1-1. Data filtering
 + GEO dataset 중, 이용하고자 하는 발현량을 나타내는 표는 GSE, GSM 두가지 포맷을 사용할 수 있음.
   + GSE의 경우, 해당 연구의 전체 샘플을 요약하여 나타내는 포맷임.
