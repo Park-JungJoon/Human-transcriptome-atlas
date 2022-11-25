@@ -44,3 +44,8 @@
   - File format : FASTQ/BAM/VCF/gtc/cel/etc ...
   - Data format : raw count, TPM, median TPM
   - Feature : Tissue/Sex/Age/Pathology Categories/Pathology Notes
+
+### Data selecting 
+  + GEO/SRA dataset의 크기가 가장 크고, micro array를 비롯한 여러 platform을 사용할 수 있지만, 데이터 processing이 어렵다. 
+  + GEO/SRA를 제외한 platform은 데이터의 형식이 통일되어있다. 
+  + GEO/SRA dataset을 사용하려면, 가장 간단한 방법으로 STAR gene counting/GTEx form 등 특정 form인 데이터들을 선별적으로 사용하는 것이 가능하다. 그러나 이와 같은 방식을 채택할 때, Program에 따른 bias나, Platform bias(TCGA의 경우 cancer cell이 많으므로.)이 생길 수 있는 문제점이 있다. 
