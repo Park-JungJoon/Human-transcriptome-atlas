@@ -50,4 +50,4 @@
 ### 고찰
 1. RNA degradation filtering
 2. Batch effect normalizing
-3. Using cloud computing?
+3. Using cloud computing for re-align?
