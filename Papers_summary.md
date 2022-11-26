@@ -1,5 +1,5 @@
 # Papers Summary for Reasearch
-### 1. Atlas of RNA sequencing profiles for normal human tissues
+### 1. Atlas of RNA sequencing profiles for normal human tissues[link](https://www.nature.com/articles/s41597-019-0043-4)
   - Data Source
     + 142 solid tissue samples representing 20 organs (post-mortem human healthy donors, who had dided in road accident, no later than 36 hours after death.)
     + Blood sample from 17 healthy donors.
@@ -15,7 +15,7 @@
 
 <br>
 
-### 2. Unifying cancer and normal RNA sequencing data from different sources
+### 2. Unifying cancer and normal RNA sequencing data from different sources[link](https://www.nature.com/articles/sdata201861)
   - Data Source 
     + GTEx (2,790 samples), TCGA normal (701 samples), TCGA tumor (6,875 samples), Total (10,366 samples)
     + GTEx samples was classified into organizations.
@@ -31,7 +31,7 @@
     + GTEx와 TCGA를 사용. GEO 는 사용대상에서 벗어남. 
     + Batch effect를 computationally correcting하는 과정을 차용하기 좋아보임. 
   
-### 3. Massive mining of publicly available RNA-seq data from human and mouse
+### 3. Massive mining of publicly available RNA-seq data from human and mouse[link](https://www.nature.com/articles/s41467-018-03751-6) [ARCHS4](https://maayanlab.cloud/archs4/)
   - Data source
     + NCBI의 GEO/SRA data set. Human 84,863 samples. Mouse 103,083 samples. Total 187,946
     + Feauture from GEO (cell line, tissue), SRA format from SRA, using FASTQ files. 
@@ -39,7 +39,7 @@
     + FASTQ file from SRA dataset.
     + Using AWS/Amazon cloud computer for bulk FASTQ align.
     + Kallisto (one-way reads) & STAR (paired reads) for alignment program
-    + Data store as H5 data matrix
+    + Data store as H5 data matrix (hierarchical data format, binary)
     + Data clustering by t-SNE embedding
     + Providing enrichment analysis based on co-expression gene 
   - Review
