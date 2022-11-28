@@ -8,7 +8,7 @@
 
 ### ENCODE
 
-  - Samples : 58
+  - Samples : 576(experiments)
   - File format : FASTQ, BAM, TSV
   - Data format : FPKM/TPM 
   - Feature : Tissue/Cell line/Primary cell
