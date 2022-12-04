@@ -57,7 +57,9 @@
 + 17,382개 samples에 대한 meta data를 만들었으며, 개체 당 sample의 개수, sample의 tissue, sample의 specific한 tissue에 대한 통계는 아래와 같다. 
 
 #### 1. 개체당 샘플의 개수 
-
+ + Mean : 18.34
+ + Median : 19.0
+ 
   Range of sample per human| Counts
   -|-
   0-10 | 94
