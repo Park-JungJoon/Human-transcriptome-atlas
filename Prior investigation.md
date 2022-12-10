@@ -195,4 +195,21 @@ Total|17,382
 + GTEX-1F57B, GTEX-139TT, GTEX-1C4CL, GTEX-1GN1V 4명의 샘플을 사용했고, 성별은 GTEX-1F57B 여성, 나머지 3명은 남성이다.
 ![2022_gtex_human_1210_github_mds](https://user-images.githubusercontent.com/97942772/206842430-2315cf35-3a06-49f0-8a9c-1752f651091d.png)
 + MDS Plot
-     개체간 bias는 낮다. 좌측 아래 clustring된 3개의 sample은 모두 각기 다른 사람의 testis tissue이다.
+  개체간 bias는 낮다. 좌측 아래 clustring된 3개의 sample은 모두 각기 다른 사람의 testis tissue이다.
+<img width="848" alt="image" src="https://user-images.githubusercontent.com/97942772/206842578-006ea9b6-87c5-4c93-b4bc-4fcb32b8f337.png">
++ Heatmap
+  Heatmap의 일부분을 나타냈다.[원본](https://github.com/Park-JungJoon/Human-transcriptome-atlas/tree/main/Supplementary%20data)
+  성별, 개인간의 clustering이 이뤄지지 않았다.
+
+##### 4-2. Tissue 
++ Sample의 tissue 차이가 expression level에 차이가 있는지 알아보기 위해, 성별 특이적인 tissue(Testis, Ovary) 2개와 Lung, Liver 총 4개의 tissue 각각 10개의 sample을 연구에 사용했다. 총 40개 sample
++ 성별간의 차이를 보기 위해, Lung과 Liver tissue 모두 남여 5개씩의 sample을 사용했다. 
+![2022_gtex_tissue_toy1210_mds](https://user-images.githubusercontent.com/97942772/206842919-cc8795ee-b7c8-4db6-84d2-4dfc8163bb96.png)
++ MDS Plot
+  Tissue간 clustering이 매우 뚜렷하다. 같은 tissue의 다른 성별을 가진 경우 발현의 차이는 크게 없다. 
+  성별간 발현차이는 적고, tissue간 발현차이는 매우 뚜렷하다.
+<img width="850" alt="image" src="https://user-images.githubusercontent.com/97942772/206842960-2713f250-4ddb-49e4-8d42-c900fc98f0c1.png">
++ Heatmap 
+  MDS plot과 마찬가지로, tissue간 clustering이 매우 뚜렷하다. MDS plot과 마찬가지로, 같은 tissue의 다른 성별인 샘플간의 차이는 없으며, 전체적인 mapping pattern이 tissue에 따라서 보인다. 
+
+  
