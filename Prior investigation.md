@@ -164,3 +164,6 @@
   Kidney - Medulla|4    
   Total|17,382
   
+#### 4. Analysis & Clustering GTEx Data
++ GTEx에서 보정한 TPM 파일을 input으로 사용함.[data](https://storage.googleapis.com/gtex_analysis_v8/rna_seq_data/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct.gz)
++ 
