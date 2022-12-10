@@ -209,6 +209,7 @@ Total|17,382
   Tissue간 clustering이 매우 뚜렷하다. 같은 tissue의 다른 성별을 가진 경우 발현의 차이는 크게 없다. 
   성별간 발현차이는 적고, tissue간 발현차이는 매우 뚜렷하다.
 <img width="850" alt="image" src="https://user-images.githubusercontent.com/97942772/206842960-2713f250-4ddb-49e4-8d42-c900fc98f0c1.png">
+
 + Heatmap 
   MDS plot과 마찬가지로, tissue간 clustering이 매우 뚜렷하다. MDS plot과 마찬가지로, 같은 tissue의 다른 성별인 샘플간의 차이는 없으며, 전체적인 mapping pattern이 tissue에 따라서 보인다. 
 
