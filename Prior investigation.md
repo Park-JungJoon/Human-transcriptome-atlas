@@ -53,7 +53,7 @@
 ## Data handling 
 ### GTEx 
 + [GTEx](https://gtexportal.org/home/)에서 open access인, 948명의 Homo sapiens 개체에서  17,382개 samples에 대한 RNA-seq 결과(raw count)를 다운로드 하였다. 
-+ GTEx는 대부분 사망(사고 및 기저 질환)한 인간 sample에 대한 RNA-seq 분석 데이터이며, sample의 tissue, age, sex등의 meta data를 만들기 위한 충분한 자료를 제공한다.
++ GTEx는 대부분 사망(사고 및 기저 질환)한 인간 sample에 대한 RNA-seq 분석 데이터이며, sample의 tissue, age, sex등의 meta data를 만들기 위한 충분한 자료를 제공한다. [Meta Data](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/public_sorted_meta.tsv)
 + 17,382개 samples에 대한 meta data를 만들었으며, 개체 당 sample의 개수, sample의 tissue, sample의 specific한 tissue에 대한 통계는 아래와 같다. 
 
 #### 1. 개체당 샘플의 개수 
@@ -163,7 +163,36 @@
   Fallopian Tube|9
   Kidney - Medulla|4    
   Total|17,382
-  
+
+#### 5. Age & Sex
++ Raw data의 나이는 20-29, 30-39 식으로 10년 기준으로 표기함.
+##### 5.1 Age
++ Median : 50-59
++ Mean : 53.68 (75,65,55,45,35,25로 계산함.)
++ 
+|Age|Count|
+|-|-|
+70-79|602
+60-69|5,822
+50-59|5,612
+40-49|2,701
+30-39|1,324
+20-29|1,321
+Total|17,382
+
+|Sex|Count|
+|-|-|
+|Male|11,583|
+|Female|5,798|
+|Total|17,382|
+
 #### 4. Analysis & Clustering GTEx Data
 + GTEx에서 보정한 TPM 파일을 input으로 사용함.[data](https://storage.googleapis.com/gtex_analysis_v8/rna_seq_data/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct.gz)
-+ 
++ Meta data의 attribute에 따라 mds plot, heat map을 통해 attribute가 데이터의 어떤 영향을 끼치는지 연구함.
+
+##### 4-1. Human Bias
++ 개체간 유전자 발현의 차이가 Expression level에 차이가 있는지 알아보기 위해, 인당 17개의 Sample을 갖는 4명의 사람을 대상으로, 총 68개 Sample에 대한 MDS plot, Heatmap을 그렸다.
++ GTEX-1F57B, GTEX-139TT, GTEX-1C4CL, GTEX-1GN1V 4명의 샘플을 사용했고, 성별은 GTEX-1F57B 여성, 나머지 3명은 남성이다.
+![2022_gtex_human_1210_github_mds](https://user-images.githubusercontent.com/97942772/206842430-2315cf35-3a06-49f0-8a9c-1752f651091d.png)
++ MDS Plot
+     개체간 bias는 낮다. 좌측 아래 clustring된 3개의 sample은 모두 각기 다른 사람의 testis tissue이다.
