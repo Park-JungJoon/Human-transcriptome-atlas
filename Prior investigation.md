@@ -264,6 +264,8 @@ tracheal epithelial cell|1
 left colon|1
 gastrocnemius medialis|1
 
++ 다른 데이터 베이스와의 Tissue를 벤다이어그램을 그려, total meta data의 통합이 필요하다.
+
 #### Sex
 Sex | Count
 -|-
