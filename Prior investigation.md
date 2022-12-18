@@ -215,3 +215,75 @@ Total|17,382
   MDS plot과 마찬가지로, tissue간 clustering이 매우 뚜렷하다. MDS plot과 마찬가지로, 같은 tissue의 다른 성별인 샘플간의 차이는 없으며, 전체적인 mapping pattern이 tissue에 따라서 보인다. 
 
   
+### ENCODE
++ [ENCODE](https://www.encodeproject.org/rnaget-report/?type=RNAExpression&file.assay_title%21=polyA+minus+RNA-seq&file.assay_title=total+RNA-seq&field=%40id&field=expression.gene_id&field=expression.tpm&field=expression.fpkm&field=gene.symbol&field=gene.name&field=gene.title&field=file.biosample_ontology.term_name&field=file.assay_title&field=file.assembly&field=file.biosample_ontology.classification&field=file.biosample_ontology.organ_slims&field=dataset.replicates.library.biosample.sex&field=dataset.replicates.library.biosample.donor.organism.scientific_name&field=dataset.biosample_summary&field=file.genome_annotation&field=file.donors&field=file.%40id&field=dataset.%40id&field=uuid&field=schema_version&field=expression&field=file&field=dataset&field=gene&field=%40type)에서 open access인 56개 samples에 대한 RNA-seq 결과(TPM/FPKM)을 다운로드하였다.
++ ENCODE의 경우, 전체 dataset의 크기가 작으며, sample의 tissue,age,sex 등의 meta data를 만들기 위한 자료를 제공하며, tissue가 아닌 cell line의 RNA-seq 결과도 포함한다.
++ 56개 samples에 대한 meta data를 만들었으며,  sample의 tissue, sample의 specific한 tissue에 대한 통계는 아래와 같다. 
+
+#### Destribution of ENCODE
+#### Tissue
+Tissue|Count
+-|-
+heart right ventricle|3
+activated T-cell|3
+upper lobe of left lung|3
+esophagus muscularis mucosa|3
+esophagus squamous epithelium|2
+suprapubic skin|2
+right cardiac atrium|2
+subcutaneous adipose tissue|2
+ovary|2
+lung|2
+heart left ventricle|2
+colonic mucosa|2
+left ventricle myocardium superior|1
+sigmoid colon|1
+GM12878|1
+Peyer's patch|1
+progenitor cell of endocrine pancreas|1
+omental fat pad|1
+mucosa of descending colon|1
+H1|1
+prostate gland|1
+tibial nerve|1
+adrenal gland|1
+left lobe of liver|1
+mesenchymal stem cell of the bone marrow|1
+bronchial epithelial cell|1
+dermis lymphatic vessel endothelial cell|1
+activated CD8-positive, alpha-beta T cell|1
+lower lobe of right lung|1
+kidney|1
+macrophage|1
+neural crest cell|1
+left lung|1
+spleen|1
+Right ventricle myocardium superior|1
+left cardiac atrium|1
+tracheal epithelial cell|1
+left colon|1
+gastrocnemius medialis|1
+
+#### Sex
+Sex | Count
+-|-
+Male | 23
+Female | 29
+Unknown | 1
+Male,Female | 3
+
+#### Age
+Median : 53
+Mean : 49.38
+
+Age | Count
+-|-
+60-69 | 10
+50-59 | 25
+40-49 | 10
+30-39 | 2
+20-29 | 1
+10-19 | 2
+0-10 | 1
+NA | 5
+
