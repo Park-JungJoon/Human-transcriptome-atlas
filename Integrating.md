@@ -42,7 +42,7 @@
 #### 3-1-a. Tissue
 + 통합 데이터의 상위 20개 Tissue에 대한 분포는 아래와 같다.
 
-![Tissue](https://user-images.githubusercontent.com/97942772/209555250-55e35278-08b7-4e04-9f64-6244562ee019.png)
+![Rplot01](https://user-images.githubusercontent.com/97942772/209561224-471cc8c8-b267-4722-b362-40e7f8245e06.png)
 
 Tissue|Blood|Brain|Lung|Skin|Thyroid|Breast|Kidney|Esophagus|Large Intestine|Uterus|Blood Vessel|Adipose Tissue|Prostate|Heart|Pancreas|Stomach|Muscle|Liver|Ovary|Nerve
 -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -67,15 +67,20 @@ NA|504
 
 ### 3-2. GTEx Data
 #### 3-2-a. Tissue
+![image](https://user-images.githubusercontent.com/97942772/209560018-97aa846a-0e9e-4798-94bc-454179d5526d.png)
+
+
 Tissue|Brain|Skin|Esophagus|Blood Vessel|Adipose Tissue|Blood|Heart|Muscle|Large intestine|Thyroid|Nerve|Lung|Breast|Testis|Stomach|Pancreas|Pituitary|Adrenal Gland|Prostate|Spleen|
 -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 Count|2,642|1,809|1,445|1,335|1,203|929|861|803|779|653|619|578|459|361|359|328|283|258|245|241
 
 
 #### 3-2-b. Age
+![image](https://user-images.githubusercontent.com/97942772/209559451-1de7ac4e-4af3-4103-8ff6-60bf902a76b8.png)
+
 Age|70-79|60-69|50-59|40-49|30-39|20-29
 -|-|-|-|-|-|-
-601|5,821|5,614|2,702|1,323|1,320
+Count|601|5,821|5,614|2,702|1,323|1,320
 
 #### 3-2-c. Sex
 Sex|Count
@@ -85,12 +90,17 @@ female|5,797
 
 ### 3-3. TCGA Data
 #### 3-3-a. Tissue
+![Rplot](https://user-images.githubusercontent.com/97942772/209560856-d976b01c-b4c4-46c7-9640-c5992e133231.png)
+
+
 Tissue|Blood|Lung|Kidney|Breast|Thyroid|Uterus|Large intestine|Brain|Prostate|Lymphoid organ|Pancreas|Ovary|Skin|Stomach|Liver|Bladder|ETC|Adrenal Gland|Tongue|Testis|
 -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 Count|5755|1872|1779|1587|1402|1370|880|874|691|519|512|503|502|471|470|433|318|298|221|169|157|
 
 
 #### 3-3-b. Age
+![image](https://user-images.githubusercontent.com/97942772/209559228-047add7b-e153-4805-ab54-a83e4bc1d1fa.png)
+
 Age|90-99|80-89|70-79|60-69|50-59|40-49|30-39|20-29|10-19|00-09|NA|
 -|-|-|-|-|-|-|-|-|-|-|-|
 Count|228|1,049|3,293|4,797|3,871|2,196|1,249|822|2,129|412|1,972
