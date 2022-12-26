@@ -38,3 +38,68 @@
 
 + 현재 ENCODE를 제외하고, TCGA와 GTEx의 데이터를 meta data를 통합했고, ENCODE는 다운로드가 완료되는 대로 통합이 가능한 소스코드를 작성했다.
 ## 3. Distribution
+### 3-1. Intergrated Data
+#### 3-1-a. Tissue
++ 통합 데이터의 상위 20개 Tissue에 대한 분포는 아래와 같다.
+
+![Tissue](https://user-images.githubusercontent.com/97942772/209555250-55e35278-08b7-4e04-9f64-6244562ee019.png)
+
+Tissue|Blood|Brain|Lung|Skin|Thyroid|Breast|Kidney|Esophagus|Large Intestine|Uterus|Blood Vessel|Adipose Tissue|Prostate|Heart|Pancreas|Stomach|Muscle|Liver|Ovary|Nerve
+-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+Count|6,684|3,516|2,450|2,311|2,055|2,046|1,868|1,666|1,659|1,531|1,335|1,203|936|861|840|830|803|696|683|630
+
+
+#### 3-1-b. Age
++ 통합 데이터의 Age 분포는 아래와 같다.
+![image](https://user-images.githubusercontent.com/97942772/209555837-e34a3066-35af-4e0d-a4b3-a71c4ea5fa8c.png)
+
+Age|90-99|80-89|70-79|60-69|50-59|40-49|30-39|20-29|10-19|00-09|NA|
+-|-|-|-|-|-|-|-|-|-|-|-|
+Count|228|1,049|3,894|10,618|9,485|4,898|2,572|2,142|2,129|412|1,972
+
+
+#### 3-1-c. Sex
+Sex | Count
+-|-
+Male|22,311
+Female|16,584
+NA|504
+
+### 3-2. GTEx Data
+#### 3-2-a. Tissue
+Tissue|Brain|Skin|Esophagus|Blood Vessel|Adipose Tissue|Blood|Heart|Muscle|Large intestine|Thyroid|Nerve|Lung|Breast|Testis|Stomach|Pancreas|Pituitary|Adrenal Gland|Prostate|Spleen|
+-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+Count|2,642|1,809|1,445|1,335|1,203|929|861|803|779|653|619|578|459|361|359|328|283|258|245|241
+
+
+#### 3-2-b. Age
+Age|70-79|60-69|50-59|40-49|30-39|20-29
+-|-|-|-|-|-|-
+601|5,821|5,614|2,702|1,323|1,320
+
+#### 3-2-c. Sex
+Sex|Count
+-|-
+male|11,584
+female|5,797
+
+### 3-3. TCGA Data
+#### 3-3-a. Tissue
+Tissue|Blood|Lung|Kidney|Breast|Thyroid|Uterus|Large intestine|Brain|Prostate|Lymphoid organ|Pancreas|Ovary|Skin|Stomach|Liver|Bladder|ETC|Adrenal Gland|Tongue|Testis|
+-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+Count|5755|1872|1779|1587|1402|1370|880|874|691|519|512|503|502|471|470|433|318|298|221|169|157|
+
+
+#### 3-3-b. Age
+Age|90-99|80-89|70-79|60-69|50-59|40-49|30-39|20-29|10-19|00-09|NA|
+-|-|-|-|-|-|-|-|-|-|-|-|
+Count|228|1,049|3,293|4,797|3,871|2,196|1,249|822|2,129|412|1,972
+
+
+#### 3-3-c. Sex
+Sex|Count
+-|-
+Female|10,787
+Male|10,727
+NA|504
+
