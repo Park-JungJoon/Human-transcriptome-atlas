@@ -43,8 +43,8 @@
 ### 3-1. Intergrated Data
 #### 3-1-a. Tissue
 + 통합 데이터의 상위 20개 Tissue에 대한 분포는 아래와 같다.
+![image](https://user-images.githubusercontent.com/97942772/209605034-8fa137a0-be4a-4119-964b-2d06c991c822.png)
 
-![Rplot01](https://user-images.githubusercontent.com/97942772/209561224-471cc8c8-b267-4722-b362-40e7f8245e06.png)
 
 Tissue|Blood|Brain|Lung|Skin|Thyroid|Breast|Kidney|Esophagus|Large Intestine|Uterus|Blood Vessel|Adipose Tissue|Prostate|Heart|Pancreas|Stomach|Muscle|Liver|Ovary|Nerve
 -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -69,7 +69,7 @@ NA|504
 
 ### 3-2. GTEx Data
 #### 3-2-a. Tissue
-![image](https://user-images.githubusercontent.com/97942772/209560018-97aa846a-0e9e-4798-94bc-454179d5526d.png)
+![image](https://user-images.githubusercontent.com/97942772/209605328-6820d488-6eb8-4d97-9ac3-da10c32dccb8.png)
 
 
 Tissue|Brain|Skin|Esophagus|Blood Vessel|Adipose Tissue|Blood|Heart|Muscle|Large intestine|Thyroid|Nerve|Lung|Breast|Testis|Stomach|Pancreas|Pituitary|Adrenal Gland|Prostate|Spleen|
@@ -92,7 +92,7 @@ female|5,797
 
 ### 3-3. TCGA Data
 #### 3-3-a. Tissue
-![Rplot](https://user-images.githubusercontent.com/97942772/209560856-d976b01c-b4c4-46c7-9640-c5992e133231.png)
+![image](https://user-images.githubusercontent.com/97942772/209605291-a261c877-cce4-4bfb-8714-cae4f5218bf2.png)
 
 
 Tissue|Blood|Lung|Kidney|Breast|Thyroid|Uterus|Large intestine|Brain|Prostate|Lymphoid organ|Pancreas|Ovary|Skin|Stomach|Liver|Bladder|ETC|Adrenal Gland|Tongue|Testis|
