@@ -67,7 +67,7 @@ NA|504
 
 ### 3-2. GTEx Data
 #### 3-2-a. Tissue
-+ 상위 20개 tissue에 대한 분포는 아래와 같다. [Total Tissue Distribution](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/Integrated_data.md)
++ GTEx 데이터의 sample 개수 상위 20개 tissue의 sample 개수 분포는 아래와 같다. [Total Tissue Distribution](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/Integrated_data.md)
 
 ![image](https://user-images.githubusercontent.com/97942772/209605328-6820d488-6eb8-4d97-9ac3-da10c32dccb8.png)
 
@@ -92,7 +92,7 @@ female|5,797
 
 ### 3-3. TCGA Data
 #### 3-3-a. Tissue
-+ 상위 20개 tissue에 대한 분포는 아래와 같다. [Total Tissue Distribution](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/Integrated_data.md)
++ TCGA 데이터의 sample 개수 상위 20개 tissue의 sample 개수 분포는 아래와 같다. [Total Tissue Distribution](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/Integrated_data.md)
 
 ![image](https://user-images.githubusercontent.com/97942772/209605291-a261c877-cce4-4bfb-8714-cae4f5218bf2.png)
 
@@ -117,9 +117,7 @@ Female|10,787
 Male|10,727
 NA|504
 
-## Problems
-+ Gene annotation version integrating
-+ ENCODE data download
-+ Data supplement from GEO/SRA
-+ GTEx & TCGA data's attribute is cancer and died people. Removing batch effect is required.
-+ Tissue re-sorting needed, by DEGs 
+## Discussion
++ GTEx & TCGA data's attribute is cancer and dead people. Removing batch effect might be required.
++ Tissue re-naming needed, by DEGs. 
++ Data supplement from GEO/SRA, tissue with insufficient number of samples. 
