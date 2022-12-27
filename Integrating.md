@@ -1,5 +1,5 @@
 # Intergrating Human Transcriptome Database 
-+ 이용 가능한 세 데이터 베이스, (GTEx, ENCODE, TCGA)의 데이터를 통합함을 목적으로 한다.
++ Public human transcriptome Database (GTEx, ENCODE, TCGA)의 gene count table(TPM), meta data를 통합함을 목적으로 한다.
 
 ## 1. Feature of three public human transcriptome databases
 ### 1-1. GTEx
@@ -8,18 +8,18 @@
   + Tissue는 포괄적인 Tissue 30개와, Specific tissue 45개로 나타난다.
   + Sex는 male, female으로 나뉜다.
   + Age는 10년을 기준으로 20대 - 70대까지의 분포를 나타낸다.
-  + 데이터 베이스의 특성으로 사망자들에서 채취한 샘플만을 사용한다.
+  + GTEx는 사망자에서 채취한 샘플만을 사용한다.
 ### 1-2. TCGA
   + 22,018 Samples.
   + Meta data로서 제공하는 정보로 age at diagnosis, race, sex, ethinicity, vital status, primary diagnosis, disease type 등을 제공한다. 
   + Tissue는 56개로 나뉜다.
   + Sex는 male, female, unknown으로 나뉜다.
   + Age는 days를 기준으로 나타난다. Age는 샘플 채취일이 아닌, 진단시 날짜(age at diagnosis)이다. 채취일 기준 나이 데이터를 제공하지 않아, Age를 사용했다.
-  + 데이터 베이스의 특성으로는, 모든 샘플이 암 환자에서 채취한 조직 샘플이며, 암세포와 정상세포가 혼재한다.
+  + TCGA는 모든 샘플이 암 환자에서 채취한 조직 샘플이며, 암세포와 정상세포가 혼재한다.
 ### 1-3. ENCODE
   + 데이터 다운로드 중에 있다.
   + Meta data로서 제공하는 정보로 tissue, age, sex, sample donor 등의 meta data를 제공한다.
-  + 350 Samples.(Total RNA-seq 186, polyA plus RNA-seq 164)
+  + 350 Samples.(Total RNA-seq 186, polyA plus RNA-seq 164.)
   + Tissue는 91개로 나뉜다.
   + Sex는 male, female, unknown으로 나뉜다.
   + Age는 1년을 기준으로 나타난다.
