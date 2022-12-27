@@ -26,10 +26,12 @@
   + Age는 1년을 기준으로 나타난다.
 
 ## 2. Intergrating
++ 세 데이터 베이스에서 공통적으로 존재하는 meta data(age, tissue, sex)으로 통합 [meta data](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/integrated_tcga_gtex.tsv)를 만들었다.
 ### 2-1. Age
   + 나이는 가장 큰 단위인 10년(GTEx)로 통일하였다. 
 ### 2-2. Tissue
-  + 3개 database에서 organ을 기준으로 총 45개의 Tissue를 기준점으로 사용했다.[Supplementary data](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/Tissue%20intergrating.txt)
+  + 3개 database에서 총 45개의 Tissue를 분류군으로 사용했다.[Supplementary data](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/Tissue%20intergrating.txt)
+  + GTEx를 기준으로, organ을 기준으로 분류군을 만들었으며, GTEx에 없고, 다른 데이터 베이스에서 주요하게 다루는 tissue일 경우, 새 분류군을 만들었다.
 ### 2-3. Sex
   + 3개의 데이터 베이스에서 sex를 표기하는 방법이 같아, male/female/unknown으로 사용했다.
 ### 2-4. Gene
@@ -78,9 +80,9 @@ Count|2,642|1,809|1,445|1,335|1,203|929|861|803|779|653|619|578|459|361|359|328|
 #### 3-2-b. Age
 ![image](https://user-images.githubusercontent.com/97942772/209559451-1de7ac4e-4af3-4103-8ff6-60bf902a76b8.png)
 
-Age|70-79|60-69|50-59|40-49|30-39|20-29
+Age|20-29|30-39|40-49|50-59|60-69|70-79
 -|-|-|-|-|-|-
-Count|601|5,821|5,614|2,702|1,323|1,320
+Count|1,320|1,323|2,702|5,614|5,821|601
 
 #### 3-2-c. Sex
 Sex|Count
