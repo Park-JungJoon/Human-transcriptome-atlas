@@ -42,7 +42,7 @@
 ## 3. Distribution
 ### 3-1. Intergrated Data
 #### 3-1-a. Tissue
-+ 통합 데이터의 상위 20개 Tissue에 대한 분포는 아래와 같다.
++ 통합 데이터의 상위 20개 Tissue에 대한 분포는 아래와 같다. [Total Tissue Distribution](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/Integrated_data.md)
 ![image](https://user-images.githubusercontent.com/97942772/209605034-8fa137a0-be4a-4119-964b-2d06c991c822.png)
 
 
@@ -69,6 +69,7 @@ NA|504
 
 ### 3-2. GTEx Data
 #### 3-2-a. Tissue
+[Total Tissue Distribution](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/Integrated_data.md)
 ![image](https://user-images.githubusercontent.com/97942772/209605328-6820d488-6eb8-4d97-9ac3-da10c32dccb8.png)
 
 
@@ -92,6 +93,7 @@ female|5,797
 
 ### 3-3. TCGA Data
 #### 3-3-a. Tissue
+[Total Tissue Distribution](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/Integrated_data.md)
 ![image](https://user-images.githubusercontent.com/97942772/209605291-a261c877-cce4-4bfb-8714-cae4f5218bf2.png)
 
 
