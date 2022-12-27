@@ -120,3 +120,7 @@ Female|10,787
 Male|10,727
 NA|504
 
+## Problems
++ Gene annotation version integrating
++ ENCODE data download
++ Data supplement from GEO/SRA
