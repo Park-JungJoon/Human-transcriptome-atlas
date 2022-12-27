@@ -102,7 +102,7 @@ female|5,797
 
 Tissue|Blood|Lung|Kidney|Breast|Thyroid|Uterus|Large intestine|Brain|Prostate|Lymphoid organ|Pancreas|Ovary|Skin|Stomach|Liver|Bladder|ETC|Adrenal Gland|Tongue|Testis|
 -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
-Count|5755|1872|1779|1587|1402|1370|880|874|691|519|512|503|502|471|470|433|318|298|221|169|157|
+Count|5,755|1,872|1,779|1,587|1,402|1,370|880|874|691|519|512|503|502|471|470|433|318|298|221|169|157|
 
 
 #### 3-3-b. Age
