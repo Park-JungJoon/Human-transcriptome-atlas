@@ -1,4 +1,5 @@
 + Integrated data(tissue)
+
 Tissue|Count
 -|-
 Blood|6684
@@ -50,6 +51,7 @@ Anal|3
 Spinal cord, cranial nerves, and other parts of central nervous system|3
 
 + GTEx data(tissue)
+
 Tissue|Count
 -|-
 Brain|2642
@@ -82,7 +84,9 @@ Kidney|89
 Bladder|21
 Fallopian Tube|9
 
-+TCGA data(Tissue)
++ TCGA data(Tissue)
+
+
 Tissue|Count
 -|-
 Blood|5755
