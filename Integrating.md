@@ -124,3 +124,5 @@ NA|504
 + Gene annotation version integrating
 + ENCODE data download
 + Data supplement from GEO/SRA
++ GTEx & TCGA data's attribute is cancer and died people. Removing batch effect is required.
++ Tissue re-sorting needed, by DEGs 
