@@ -4,20 +4,21 @@
 ## 1. Distribution of three databases
 ### 1-1. GTEx
   + 17,382 Samples.
-  + Tissue, Sex, Age 3가지의 정보를 meta data에 사용했다. 
+  + Meta data로서 제공하는 정보로 Sample donor, tissue, specific tissue, submitted date, expreiment method, sex, age, hardy scale 등의 정보를 제공한다.
   + Tissue는 포괄적인 Tissue 30개와, Specific tissue 45개로 나타난다.
   + Sex는 male, female으로 나뉜다.
   + Age는 10년을 기준으로 20대 - 70대까지의 분포를 나타낸다.
   + 데이터 베이스의 특성으로 사망자들에서 채취한 샘플만을 사용한다.
 ### 1-2. TCGA
   + 22,018 Samples.
-  + Tissue, Sex, Age 3가지의 정보를 meta data에 사용했다.
+  + Meta data로서 제공하는 정보로 age at diagnosis, race, sex, ethinicity, vital status, primary diagnosis, disease type 등을 제공한다. 
   + Tissue는 56개로 나뉜다.
   + Sex는 male, female, unknown으로 나뉜다.
   + Age는 days를 기준으로 나타난다. Age는 샘플 채취일이 아닌, 진단시 날짜(age at diagnosis)이다. 채취일 기준 나이 데이터를 제공하지 않아, Age를 사용했다.
   + 데이터 베이스의 특성으로는, 샘플들이 암에 관련된 샘플이다.
 ### 1-3. ENCODE
   + 서버의 문제로, 약 15개의 샘플들마다 수기로 다운로드 받아야한다. 다운로드 중에 있다.
+  + Meta data로서 제공하는 정보로 tissue, age, sex, sample donor 등의 meta data를 제공한다.
   + Meta data 생성과, gene count table을 생성할 수 있는 소스코드를 작성했다.
   + 350 Samples.(Total RNA-seq 186, polyA plus RNA-seq 164)
   + Tissue, Sex, Age 3가지의 정보를 meta data에 사용했다.
