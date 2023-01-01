@@ -70,7 +70,7 @@ NA|504
 
 
 Tissue|Brain|Skin|Esophagus|Blood Vessel|Adipose Tissue|Blood|Heart|Muscle|Large intestine|Thyroid|Nerve|Lung|Breast|Testis|Stomach|Pancreas|Pituitary|Adrenal Gland|Prostate|Spleen|
--|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
 Count|2,642|1,809|1,445|1,335|1,203|929|861|803|779|653|619|578|459|361|359|328|283|258|245|241
 
 
