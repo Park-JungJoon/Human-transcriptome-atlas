@@ -49,7 +49,7 @@ Count|6683|3523|2478|2320|2060|2049|1888|1684|1676|1533|1344|1215|938|895|852|85
 
 #### 3-1-b. Age
 + 통합 데이터의 Age 분포는 아래와 같다.
-![image](https://user-images.githubusercontent.com/97942772/209555837-e34a3066-35af-4e0d-a4b3-a71c4ea5fa8c.png)
+![image](https://user-images.githubusercontent.com/97942772/210167767-94d0cd6a-1d1f-4803-920f-cf32a1536f93.png)
 
 Age|90-99|80-89|70-79|60-69|50-59|40-49|30-39|20-29|10-19|00-09|Unknown|
 -|-|-|-|-|-|-|-|-|-|-|-
@@ -70,7 +70,7 @@ NA|504
 
 
 Tissue|Brain|Skin|Esophagus|Blood Vessel|Adipose Tissue|Blood|Heart|Muscle|Large intestine|Thyroid|Nerve|Lung|Breast|Testis|Stomach|Pancreas|Pituitary|Adrenal Gland|Prostate|Spleen|
--|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
+-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 Count|2,642|1,809|1,445|1,335|1,203|929|861|803|779|653|619|578|459|361|359|328|283|258|245|241
 
 
@@ -118,13 +118,15 @@ NA|504
 #### 3-3-a. Tissue
 + ENCODE 데이터의 sample 개수 상위 20개 tissue의 sample 개수 분포는 아래와 같다. [Total Tissue Distribution](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/Integrated_data.md)
 
+![image](https://user-images.githubusercontent.com/97942772/210167713-994c2143-68ea-4f70-9550-46b9da5c0903.png)
 
-
-#### 3-3-b. Age
 Tissue|Muscle|Heart|Lung|Large intestine|Adrenal Gland|Kidney|Stomach|Spleen|Adipose Tissue|Placenta|Liver|Pancreas|Small Intestine|Esophagus|Nerve|Ovary|Skin|Blood Vessel|Thymus|Brain|Thyroid|Testis|Lymphoid organ|Uterus|Breast|Prostate|Bladder|Gallbladder|Vagina|Tongue|Umbilical cord|Eye|
--|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
 Count|49|34|28|25|21|20|15|14|12|12|11|10|10|10|9|9|9|9|7|7|5|4|4|3|3|2|2|1|1|1|1|1|
 
+#### 3-3-b. Age
+
+![image](https://user-images.githubusercontent.com/97942772/210167748-32594317-83aa-4017-ae2f-d0a956e931b8.png)
 
 Age|60-69|50-59|40-49|30-39|20-29|10-19|00-09
 -|-|-|-|-|-|-|-
