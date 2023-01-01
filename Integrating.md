@@ -143,9 +143,11 @@ Sex|Count
 Female|172
 Male|162
 NA|16
-
+## 4. Gencode Annotation Version Intergrating
++ 모든 데이터 베이스에서 gene들은 Ensemble annotation accession id, gene name을 갖고 있다. 
++ TCGA는 60,661개, GTEx는 56,201개, ENCODE는 55,617개이다.
++ Ensemble annotation accession ID는 ENSG00000001630.16 와 같은 방식으로 쓰이고, .뒤의 숫자는 버젼을 의미한다.
++ 앞의 accession id를 갖고 3개 데이터 베이스에서 공유 되는 유전자의 개수는 55,617개로, ENCODE 유전자의 전체가 보존되어, 이를 기준으로 통합하고자 한다.
 
 ## Discussion
-+ GTEx & TCGA data's attribute is cancer and dead people. Removing batch effect might be required.
-+ Tissue re-naming needed, by DEGs. 
-+ Data supplement from GEO/SRA, tissue with insufficient number of samples. 
++ Gencode annotation version 작업중에 있음.
