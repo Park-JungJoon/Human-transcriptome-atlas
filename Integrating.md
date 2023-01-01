@@ -114,6 +114,29 @@ Female|10,787
 Male|10,727
 NA|504
 
+### 3-3. ENCODE Data
+#### 3-3-a. Tissue
++ ENCODE 데이터의 sample 개수 상위 20개 tissue의 sample 개수 분포는 아래와 같다. [Total Tissue Distribution](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/Integrated_data.md)
+
+
+
+#### 3-3-b. Age
+Tissue|Muscle|Heart|Lung|Large intestine|Adrenal Gland|Kidney|Stomach|Spleen|Adipose Tissue|Placenta|Liver|Pancreas|Small Intestine|Esophagus|Nerve|Ovary|Skin|Blood Vessel|Thymus|Brain|Thyroid|Testis|Lymphoid organ|Uterus|Breast|Prostate|Bladder|Gallbladder|Vagina|Tongue|Umbilical cord|Eye|
+-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+Count|49|34|28|25|21|20|15|14|12|12|11|10|10|10|9|9|9|9|7|7|5|4|4|3|3|2|2|1|1|1|1|1|
+
+
+Age|60-69|50-59|40-49|30-39|20-29|10-19|00-09
+-|-|-|-|-|-|-|-
+Count|18|81|30|66|7|3|144
+
+#### 3-3-c. Sex
+Sex|Count
+-|-
+Female|10,787
+Male|10,727
+NA|504
+
 ## Discussion
 + GTEx & TCGA data's attribute is cancer and dead people. Removing batch effect might be required.
 + Tissue re-naming needed, by DEGs. 
