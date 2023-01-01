@@ -58,9 +58,14 @@ Count|228|1049|3894|10617|9485|4898|2571|2142|2129|761|1974|
 #### 3-1-c. Sex
 Sex | Count
 -|-
-Male|22,311
-Female|16,584
-NA|504
+Male|22,472
+Female|16,754
+NA|522
+
+
+Sexmale|female|Unknown|female,male|unknown|male,female|
+-|-|-|-|-|-|
+Count|22472|16754|506|7|5|4|
 
 ### 3-2. GTEx Data
 #### 3-2-a. Tissue
@@ -135,9 +140,10 @@ Count|18|81|30|66|7|3|144
 #### 3-3-c. Sex
 Sex|Count
 -|-
-Female|10,787
-Male|10,727
-NA|504
+Female|172
+Male|162
+NA|16
+
 
 ## Discussion
 + GTEx & TCGA data's attribute is cancer and dead people. Removing batch effect might be required.
