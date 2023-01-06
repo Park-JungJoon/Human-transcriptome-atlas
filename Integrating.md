@@ -39,8 +39,7 @@
 ### 3-1. Intergrated Data
 #### 3-1-a. Tissue
 + 통합 데이터의 sample 개수 상위 20개 tissue의 sample 개수 분포는 아래와 같다. [Total Tissue Distribution](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/Integrated_data.md)
-![image](https://user-images.githubusercontent.com/97942772/210167153-6c432dc0-a8d4-43b8-bedb-5467df12b7d0.png)
-
+![image](https://user-images.githubusercontent.com/97942772/210997605-de682ee6-7083-47a9-8074-b8fd20a3c9bf.png)
 
 Tissue|Blood|Brain|Lung|Skin|Thyroid|Breast|Kidney|Large intestine|Esophagus|Uterus|Blood Vessel|Adipose Tissue|Prostate|Heart|Muscle|Pancreas|Stomach|Liver|Ovary|Nerve|Adrenal Gland|Lymphoid organ|Testis|Bladder|ETC|Pituitary|Spleen|Mouth|Small Intestine|Tongue|Salivary Gland|Vagina|Retroperitoneum and peritoneum|Connective, subcutaneous and other soft tissues|Unknown|Larynx|Heart,mediastinum,and pleura|Thymus|Bone&joint|Eye|Tonsil|Gallbladder|Placenta|Fallopian Tube|Anal|Umbilical cord|
 -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
@@ -60,12 +59,7 @@ Sex | Count
 -|-
 Male|22,472
 Female|16,754
-NA|522
-
-
-Sexmale|female|Unknown|female,male|unknown|male,female|
--|-|-|-|-|-|
-Count|22472|16754|506|7|5|4|
+Unknown|522
 
 ### 3-2. GTEx Data
 #### 3-2-a. Tissue
@@ -117,7 +111,7 @@ Sex|Count
 -|-
 Female|10,787
 Male|10,727
-NA|504
+Unknown|504
 
 ### 3-3. ENCODE Data
 #### 3-3-a. Tissue
@@ -142,7 +136,7 @@ Sex|Count
 -|-
 Female|172
 Male|162
-NA|16
+Unknown|16
 ## 4. Gencode Annotation Version Intergrating
 + 모든 데이터 베이스에서 gene들은 Ensemble annotation accession id, gene name을 갖고 있다. 
 + TCGA는 60,661개, GTEx는 56,201개, ENCODE는 55,617개이다.
