@@ -142,6 +142,12 @@ Unknown|16
 + TCGA는 60,661개, GTEx는 56,201개, ENCODE는 55,617개이다.
 + Ensemble annotation accession ID는 ENSG00000001630.16 와 같은 방식으로 쓰이고, .뒤의 숫자는 버젼을 의미한다.
 + 앞의 accession id를 갖고 3개 데이터 베이스에서 공유 되는 유전자의 개수는 55,617개로, ENCODE 유전자의 전체가 보존되어, 이를 기준으로 통합하고자 한다.
-
+Possession(v26, v29, v36)|Protein Coding|Non Coding
+-|-|-
+OOO|19,200|36,417
+XOO|647|2,121
+XXO|97|2.134
+XOX|29|30
+NOT IN Ver 36 | 598
 ## Discussion
 + Gencode annotation version 작업중에 있음.
