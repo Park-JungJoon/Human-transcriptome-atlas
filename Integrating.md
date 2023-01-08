@@ -32,8 +32,9 @@
 ### 2-3. Sex
   + 3개의 데이터 베이스에서 sex를 공통적으로 표기하는, male/female/unknown을 사용하고, ENCODE에서 2가지 sample에서 나온 데이터의 경우 male,female로 표기 되는 경우는 unknown에 통합했다.
 ### 2-4. Gene
-  + 각 데이터 베이스에 사용한 ENCODE gene annotation version이 달라, Count table간의 통합이 어려운 점에 있다. 
-  + ENCODE (V29), GTEx (V26), TCGA(V38)
+  + 각 데이터 베이스에 사용한 ENCODE gene annotation version이 달라, Count table간의 통합의 기준을 세워야함.  
+  + ENCODE (V29), GTEx (V26), TCGA(V36)
+  + 본 문서 section 4(Gencode Annotation Version Intergrating)에서 자세히 기술하였다.
 
 ## 3. Distribution of Intergrated Data
 ### 3-1. Intergrated Data
