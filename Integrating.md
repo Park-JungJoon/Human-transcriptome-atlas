@@ -155,6 +155,8 @@ XXO|97|2.134
 XOX|29|30
 
 + NOT IN Ver 36 : 598
++ 전체 61,370 개 gene 중 대 다수인 55,617개가 중복되므로, 중복되는 gene을 기준으로 gene count table을 통합했다.
++ gene name(HSP70 등)과 gene type(protein coding)등은 세 데이터 베이스 중 가장 최신 버젼인 36으로 통일하였다. 
 
 ## Discussion
-+ Gencode annotation version 작업중에 있음.
++ 확보된 merged gene count table, merged meta data를 기반으로 umap을 통한 clustering 작업중에 있음.
