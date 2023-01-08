@@ -154,7 +154,8 @@ XOO|647|2,121
 XXO|97|2.134
 XOX|29|30
 
-+ NOT IN Ver 36 : 598
++ Ver 36에 포함되지 않은 gene : 598
++ XOX(ver 29에만 포함됨)의 경우, 다른 두 데이터 베이스에서는 기본 annotation을 사용했으나, ENCODE에서 tRNA scan, gSpiken, scaffold 상의 유전자들이 있는 파일을 annotation 파일로 사용했기 떄문에 존재한다. 
 + 전체 61,370 개 gene 중 대 다수인 55,617개가 중복되므로, 중복되는 gene을 기준으로 gene count table을 통합했다.
 + gene name(HSP70 등)과 gene type(protein coding)등은 세 데이터 베이스 중 가장 최신 버젼인 36으로 통일하였다. 
 
