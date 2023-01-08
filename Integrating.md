@@ -34,7 +34,7 @@
 ### 2-4. Gene
   + 각 데이터 베이스에 사용한 ENCODE gene annotation version이 달라, Count table간의 통합의 기준을 세워야함.  
   + ENCODE (V29), GTEx (V26), TCGA(V36)
-  + 본 문서 section 4(Gencode Annotation Version Intergrating)에서 자세히 기술하였다.
+  + 본 문서 section 4(Gene Count Table Intergrating)에서 자세히 기술하였다.
 
 ## 3. Distribution of Intergrated Data
 ### 3-1. Intergrated Data
@@ -138,9 +138,10 @@ Sex|Count
 Female|172
 Male|162
 Unknown|16
-## 4. Gencode Annotation Version Intergrating
+## 4. Gene Count Table Intergrating 
+### 4-1. Gencode Annotation Version Intergrating
 + 모든 데이터 베이스에서 gene들은 Ensemble annotation accession id, gene name을 갖고 있다. 
-+ TCGA는 60,661개, GTEx는 56,201개, ENCODE는 55,617개이다.
++ TCGA (V36)는 60,661개, GTEx(V26)는 56,201개, ENCODE(V29)는 55,617개이다.
 + Ensemble annotation accession ID는 ENSG00000001630.16 와 같은 방식으로 쓰이고, .뒤의 숫자는 버젼을 의미한다.
 + 앞의 accession id를 갖고 3개 데이터 베이스에서 공유 되는 유전자의 개수는 55,617개로, ENCODE 유전자의 전체가 보존되어, 이를 기준으로 통합하고자 한다.
 
