@@ -24,7 +24,7 @@
   + Age는 1년을 기준으로 나타난다.
 
 ## 2. Intergrating Meta Data
-+ 세 데이터 베이스에서 공통적으로 존재하는 meta data(age, tissue, sex)으로 통합 [meta data](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/integrated_tcga_gtex.tsv)를 만들었다.
++ 세 데이터 베이스에서 공통적으로 존재하는 meta data(age, tissue, sex)으로 통합 [meta data](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/META_MERGED_COMPLETE.tsv)를 만들었다.
 ### 2-1. Age
   + 나이는 가장 큰 단위인 10년(GTEx)로 통일하였다. 
 ### 2-2. Tissue
