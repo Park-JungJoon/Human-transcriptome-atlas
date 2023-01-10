@@ -92,7 +92,16 @@ Unknown|522
   
 ###  5.2 The bias between databases
 + 데이터 베이스 간의 bias를 확인하기 위해, 샘플 채취 조직, 성별, 나이가 같은 샘플의 유전자 발현 heatmap을 확인하였다.
-+ Lung, Male, 60-69인 샘플을 각 데이터 베이스 별 3개씩 추출하였고 heatmap을 그렸다.
++ Lung, Male, 60-69인 샘플을 각 데이터 베이스 별 3개씩 추출하였고 heatmap을 그림.
 ![2102_NOZERO_HEATMAP_LUNG](https://user-images.githubusercontent.com/97942772/211442630-ae50fb83-b3d4-4bf5-a74f-393d91c2b5b1.png)
-+ 데이터 베이스 별 bias가 확실시되며, 615442.9 649715.42 648597.93 811693.97 776149.79 989849.54 998676.16 999194.0 999076.33
- 
+
++ Lung과 비교하기 위해 Liver, Male인 샘플을 각 데이터 베이스 별 3개씩 추출하였고 heatmap을 그림.
+![image](https://user-images.githubusercontent.com/97942772/211445927-bede13fa-6298-4c50-9d4a-ad6b78155fe9.png)
+
++ 데이터 베이스 내 tissue는 clustering이 이뤄지나, 일부 분류군 (GTEx Lung / GTEx Liver)의 경우 데이터 베이스 간 차이가 조직 간 발현차이보다 큰 경향이 있다.
++ 실험별 보정값이 다르기 때문으로 보이며, RNA-seq batch effect correction tool [ComBat-seq](https://academic.oup.com/nargab/article/2/3/lqaa078/5909519), 혹은 각 데이터 베이스 별 발현량을 조사하여 수기로 샘플 별 재보정을 고려함.
++ 전체 dataset에 대한 Umap을 통한 3차원으로 차원축소를 진행 중에 있음.
+
+## Discussion
++ Database bias correction
++ Data supplement from SRA
