@@ -1,4 +1,4 @@
-# Human-transcriptome-atlas
+# Human Transcriptome Atlas
 ## 1. Data Collecting
 + High throughput seqeuncing, Homo sapiens에 해당하며, sample 개수가 6-100개, Gene count table이 담긴 supplementary에 파일이 있는 모든 데이터를 [GEO datasets](https://www.ncbi.nlm.nih.gov/gds) 연구대상으로함.(18,676개)
 + 앞선 18,676개의 데이터 중, 사람과 다른 동물간의 발현차이를 보이는 연구 결과는 제외함.
