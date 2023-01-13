@@ -164,3 +164,4 @@ XOX|29|30
 
 ## Discussion
 + 확보된 merged gene count table, merged meta data를 기반으로 umap을 통한 clustering 작업중에 있음.
+<img width="595" alt="image" src="https://user-images.githubusercontent.com/97942772/212289208-e149d26b-29a3-4a59-86db-0b33a76a3641.png">
