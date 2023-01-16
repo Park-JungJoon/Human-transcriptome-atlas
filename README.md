@@ -91,6 +91,7 @@ Unknown|522
  + 공유되는 유전자 55,617개를 이용해 Gene Count Table을 작성함. (/eevee/val/jjpark/atlas/integrate/V36_COUNT_TABLE_COMPLETE.tsv)
   
 ###  5.2 The bias between databases
+#### 5.2.1 Heatmap Distribution
 + 데이터 베이스 간의 bias를 확인하기 위해, 샘플 채취 조직, 성별, 나이가 같은 샘플의 유전자 발현 heatmap을 확인하였다.
 + Lung, Male, 60-69인 샘플을 각 데이터 베이스 별 3개씩 추출하였고 heatmap을 그림.
 ![2102_NOZERO_HEATMAP_LUNG](https://user-images.githubusercontent.com/97942772/211442630-ae50fb83-b3d4-4bf5-a74f-393d91c2b5b1.png)
@@ -100,8 +101,14 @@ Unknown|522
 
 + 데이터 베이스 내 tissue는 clustering이 이뤄지나, 일부 분류군 (GTEx Lung / GTEx Liver)의 경우 데이터 베이스 간 차이가 조직 간 발현차이보다 큰 경향이 있다.
 + 실험별 보정값이 다르기 때문으로 보이며, RNA-seq batch effect correction tool [ComBat-seq](https://academic.oup.com/nargab/article/2/3/lqaa078/5909519), 혹은 각 데이터 베이스 별 발현량을 조사하여 수기로 샘플 별 재보정을 고려함.
-+ 전체 dataset에 대한 Umap을 통한 3차원으로 차원축소를 진행 중에 있음.
+#### 5.2.2 UMAP dimensional reduction
++ 데이터 베이스, 성별, tissue 별 bias를 확인하기 위해, 차원 축소 그래프를 UMAP(3D)을 통해 확인하였다. 
++ 데이터 베이스 별 분포는 아래와 같다. 
 
+![image](https://user-images.githubusercontent.com/97942772/212582208-8b48c87c-4c4e-4f19-b91a-2c80e43c4c8b.png)
+
+<img width="488" alt="제목 없음" src="https://user-images.githubusercontent.com/97942772/212582092-d16345a6-78d1-4566-b79d-6b5918f61641.png">
++ 
 ## Discussion
 + Database bias correction
 + Data supplement from SRA
