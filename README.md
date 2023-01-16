@@ -100,15 +100,28 @@ Unknown|522
 ![image](https://user-images.githubusercontent.com/97942772/211445927-bede13fa-6298-4c50-9d4a-ad6b78155fe9.png)
 
 + 데이터 베이스 내 tissue는 clustering이 이뤄지나, 일부 분류군 (GTEx Lung / GTEx Liver)의 경우 데이터 베이스 간 차이가 조직 간 발현차이보다 큰 경향이 있다.
-+ 실험별 보정값이 다르기 때문으로 보이며, RNA-seq batch effect correction tool [ComBat-seq](https://academic.oup.com/nargab/article/2/3/lqaa078/5909519), 혹은 각 데이터 베이스 별 발현량을 조사하여 수기로 샘플 별 재보정을 고려함.
+
+
 #### 5.2.2 UMAP dimensional reduction
 + 데이터 베이스, 성별, tissue 별 bias를 확인하기 위해, 차원 축소 그래프를 UMAP(3D)을 통해 확인하였다. 
 + 데이터 베이스 별 분포는 아래와 같다. 
 
 ![image](https://user-images.githubusercontent.com/97942772/212582208-8b48c87c-4c4e-4f19-b91a-2c80e43c4c8b.png)
 
-<img width="488" alt="제목 없음" src="https://user-images.githubusercontent.com/97942772/212582092-d16345a6-78d1-4566-b79d-6b5918f61641.png">
-+ 
++ 세 데이터 베이스간 clustering이 확실시 됨
+
+<br/>
+
++ 조직 별 분포는 아래와 같다. 
+<img width="700" alt="제목 없음" src="https://user-images.githubusercontent.com/97942772/212582092-d16345a6-78d1-4566-b79d-6b5918f61641.png">
+
++  조직 별 clustering이 되나, Blood, Skin, Uterus에서 같은 tissue가 DB에 따라 2개로 나뉘어 분포하는 경향이 있다. 
++ 실험별 보정값이 다르기 때문으로 보이며, RNA-seq batch effect correction tool [ComBat-seq](https://academic.oup.com/nargab/article/2/3/lqaa078/5909519), 혹은 각 데이터 베이스 별 발현량을 조사하여 수기로 샘플 별 재보정을 고려함.
+
+### 6. Batch Effect, Bias Correction
++ ComBat-Seq의 사용에 앞서, ComBat-Seq에서 TPM과 같은 normalized data를 사용할 시, 다른 방법으로 2번 보정되기 때문에, raw count를 사용하길 권장함.
++ 이에, TPM으로 merging한 데이터를 사용하지 않고, Raw Count를 사용하고자 함. 세 데이터 베이스 중, ENCODE의 경우 raw count를 제공하지 않고, 샘플의 수가 350개로, 다른 DB에 비해 부족하여, 제외하였다.
+
 ## Discussion
 + Database bias correction
 + Data supplement from SRA
