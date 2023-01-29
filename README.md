@@ -137,9 +137,15 @@ Unknown|522
 
 
 #### 6-3. GeTMM
-+ ComBat-seq을 통해 얻은 database 간 bias가 줄어든 
++ ComBat-seq을 통해 얻은 database 간 bias가 줄어든 raw count table의 normalizing이 요구됨.
++ Sample 간 비교를 위해 read depth (library size) 보정과, gene lenth 보정이 필요함. 
++ 두 보정법을 모두 차용한 [GeTMM] (https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2246-7)을 사용함.
++ GeTMM의 경우, RPK를 계산한 후 (Gene length 보정) 이후 edgeR 모듈의 TMM 계산 과정을 거침. 
++ TCGA의 경우, FPKM으로부터 Gene Length를 계산하였고, GTEx는 자체적으로 사용하는 Gene Length를 파싱하여 사용함.
++ RPK를 계산한 파일을 (/panpyro/alfa/jjpark/adjusted_merge/split_by_db/output_of_R)에 저장하였음.
++ GeTMM 변환 중에 있음.
 
-
-## Discussion
-+ Database bias correction
-+ Data supplement from SRA
+## Next Week Goal
++ Umap distribution of normalized data
++ Technical validation by known tissue marker gene 
++ Tissue specific gene marker, co-expression pattern searching
