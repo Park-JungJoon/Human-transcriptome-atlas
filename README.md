@@ -119,8 +119,26 @@ Unknown|522
 + 실험별 보정값이 다르기 때문으로 보이며, RNA-seq batch effect correction tool [ComBat-seq](https://academic.oup.com/nargab/article/2/3/lqaa078/5909519), 혹은 각 데이터 베이스 별 발현량을 조사하여 수기로 샘플 별 재보정을 고려함.
 
 ### 6. Batch Effect, Bias Correction
-+ ComBat-Seq의 사용에 앞서, ComBat-Seq에서 TPM과 같은 normalized data를 사용할 시, 다른 방법으로 2번 보정되기 때문에, raw count를 사용하길 권장함.
-+ 이에, TPM으로 merging한 데이터를 사용하지 않고, Raw Count를 사용하고자 함. 세 데이터 베이스 중, ENCODE의 경우 raw count를 제공하지 않고, 샘플의 수가 350개로, 다른 DB에 비해 부족하여, 제외하였다.
+#### 6-1. Divide by Sample TPM Sum
++ 가장 naive한 방법으로, 각 발현량을 sample TPM의 총합으로 나눔. 
++ PCA 분석 결과, 같은 database내 분산이 줄긴 하나, db간 분산이 줄지 않음.
+#### 6-2. ComBat-Seq [link](https://academic.oup.com/nargab/article/2/3/lqaa078/5909519)
++ 선행 연구 [Unifying cancer and normal RNA sequencing data from different sources](https://www.nature.com/articles/sdata201861)에서, GTEx와 TCGA의 database 간 bias를 ComBat-seq을 이용해 완화함.(Fig 2)
++ ComBat-seq의 input으로 TPM count table을 사용할 수 없음. 일관성이 없는 2가지 방법(ComBat-seq, TPM)으로 보정을 하기 때문에 ComBat-seq 논문에서 TPM을 input으로 사용하는 것을 권고하지 않음.
++ Sample 개수가 350개이고, raw count를 제공하지 않은 ENCODE를 데이터 병합 대상에서 제외함.
++ 이후, ComBat-seq으로 batch effect가 제거된 gene count table을 생성함. (/panpyro/alfa/jjpark/adjusted_merge/COMBATED_RAW_COUNT_TABLE.tsv)
+![image](https://user-images.githubusercontent.com/97942772/215329772-029a9e91-8a16-4408-a66f-918cbbc38d2d.png)
+
+  + Lung Sample 10개를 GTEx, TCGA 두 데이터 베이스에서 추출함. Raw count로 PCA 분석을 실시함. 
+
+![image](https://user-images.githubusercontent.com/97942772/215329776-b67ab413-c62f-4714-9316-cd473bd522dc.png)
+
+  + 같은 샘플에 대해 ComBat-seq이 보정한 PCA 결과; DB간 bias가 줄고 clustering됨.
+
+
+#### 6-3. GeTMM
++ ComBat-seq을 통해 얻은 database 간 bias가 줄어든 
+
 
 ## Discussion
 + Database bias correction
