@@ -145,6 +145,11 @@ Unknown|522
 + RPK를 계산한 파일을 (/panpyro/alfa/jjpark/adjusted_merge/split_by_db/output_of_R)에 저장하였음.
 + GeTMM 변환 중에 있음.
 
+#### 6-4. Batch Effect Correction & Global Normalization Validation
+<img width="407" alt="image" src="https://user-images.githubusercontent.com/97942772/215636595-986ab24c-fa72-432a-b871-d68bd2eb66de.png">
+
+<img width="330" alt="image" src="https://user-images.githubusercontent.com/97942772/215636833-eff439e5-b70d-4353-8989-f8d55b288153.png">
+
 ## Next Week Goal
 + Umap distribution of normalized data
 + Technical validation by known tissue marker gene 
