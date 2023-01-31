@@ -119,10 +119,10 @@ Unknown|522
 + 실험별 보정값이 다르기 때문으로 보이며, RNA-seq batch effect correction tool [ComBat-seq](https://academic.oup.com/nargab/article/2/3/lqaa078/5909519), 혹은 각 데이터 베이스 별 발현량을 조사하여 수기로 샘플 별 재보정을 고려함.
 
 ### 6. Batch Effect, Bias Correction
-#### 6-1. Divide by Sample TPM Sum
+#### 6.1. Divide by Sample TPM Sum
 + 가장 naive한 방법으로, 각 발현량을 sample TPM의 총합으로 나눔. 
 + PCA 분석 결과, 같은 database내 분산이 줄긴 하나, db간 분산이 줄지 않음.
-#### 6-2. ComBat-Seq [link](https://academic.oup.com/nargab/article/2/3/lqaa078/5909519)
+#### 6.2. ComBat-Seq [link](https://academic.oup.com/nargab/article/2/3/lqaa078/5909519)
 + 선행 연구 [Unifying cancer and normal RNA sequencing data from different sources](https://www.nature.com/articles/sdata201861)에서, GTEx와 TCGA의 database 간 bias를 ComBat-seq을 이용해 완화함.(Fig 2)
 + ComBat-seq의 input으로 TPM count table을 사용할 수 없음. 일관성이 없는 2가지 방법(ComBat-seq, TPM)으로 보정을 하기 때문에 ComBat-seq 논문에서 TPM을 input으로 사용하는 것을 권고하지 않음.
 + Sample 개수가 350개이고, raw count를 제공하지 않은 ENCODE를 데이터 병합 대상에서 제외함.
@@ -136,7 +136,7 @@ Unknown|522
   + 같은 샘플에 대해 ComBat-seq이 보정한 PCA 결과; DB간 bias가 줄고 clustering됨.
 
 
-#### 6-3. GeTMM
+#### 6.3. GeTMM
 + ComBat-seq을 통해 얻은 database 간 bias가 줄어든 raw count table의 normalizing이 요구됨.
 + Sample 간 비교를 위해 read depth (library size) 보정과, gene lenth 보정이 필요함. 
 + 두 보정법을 모두 차용한 [GeTMM] (https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2246-7)을 사용함.
@@ -145,12 +145,19 @@ Unknown|522
 + RPK를 계산한 파일을 (/panpyro/alfa/jjpark/adjusted_merge/split_by_db/output_of_R)에 저장하였음.
 + GeTMM 변환 중에 있음.
 
-#### 6-4. Batch Effect Correction & Global Normalization Validation
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/97942772/215636595-986ab24c-fa72-432a-b871-d68bd2eb66de.png">
+#### 6.4. Batch Effect Correction & Global Normalization Validation
++ 데이터 베이스 bias가 줄고, tissue간 clustering이 되는 지 확인하기 위해, 차원 축소 그래프를 UMAP(3D)을 통해 확인하였다. 
++ 데이터 베이스 별 분포는 아래와 같다. 
 
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/97942772/215636833-eff439e5-b70d-4353-8989-f8d55b288153.png">
 
++ Tissue 별 분포는 아래와 같다.
+
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/97942772/215637752-c81f93ff-9331-4b4a-9ff3-214301ddbb5b.png">
+
++ 5.2.2의 TPM UMAP (Non-Batch effect correction)과 비교했을 때, 데이터 베이스가 양극화 되어 나타나는 경향성이 적어짐
++ 같은 tissue가 데이터 베이스에 따라 2개로 나뉘게 
+
 ## Next Week Goal
-+ Umap distribution of normalized data
 + Technical validation by known tissue marker gene 
 + Tissue specific gene marker, co-expression pattern searching
