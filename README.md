@@ -151,14 +151,15 @@ Unknown|522
 
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/97942772/215636833-eff439e5-b70d-4353-8989-f8d55b288153.png">
 
+  + 5.2.2의 TPM UMAP (Non-Batch effect correction)과 비교했을 때, 데이터 베이스가 양극화 되어 나타나는 경향성이 적어짐
+
 + Tissue 별 분포는 아래와 같다.
 
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/97942772/215637752-c81f93ff-9331-4b4a-9ff3-214301ddbb5b.png">
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/97942772/215638651-5a0ba393-dba0-4c1e-9283-d3a132535860.png">
 
-+ 5.2.2의 TPM UMAP (Non-Batch effect correction)과 비교했을 때, 데이터 베이스가 양극화 되어 나타나는 경향성이 적어짐
-+ 같은 tissue가 데이터 베이스에 따라 2개로 나뉘게 되는 경향성이 적어짐.
 
++ 같은 tissue가 데이터 베이스에 따라 2개로 나뉘게 되는 경향성이 적어짐.
 + ComBat-Seq과, GeTMM을 통한 normalizing이 TCGA, GTEx 데이터 셋의 데이터간 bias를 줄이는 방법으로 효과적임.
 
 ## Next Week Goal
