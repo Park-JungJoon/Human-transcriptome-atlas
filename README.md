@@ -162,6 +162,36 @@ Unknown|522
 + 같은 tissue가 데이터 베이스에 따라 2개로 나뉘게 되는 경향성이 적어짐.
 + ComBat-Seq과, GeTMM을 통한 normalizing이 TCGA, GTEx 데이터 셋의 데이터간 bias를 줄이는 방법으로 효과적임.
 
-## Next Week Goal
+### 7. Comparison Normalizing Methods
++ 앞서 진행한 normalizing method들과, 단순 library size로 보정하는 방법이 sample간 비교에 있어서 큰 차이를 갖는지 검토함.
++ Gene 3개에 대해, X축에 Raw count/Sample library size, Y축에 GeTMM, Combet-seq/Sample library size 값을 사용함.
++ Scatter Plot으로 표기하고 Y=x 에 대한 선형회귀, Multiple R-squared 값을 통해 차이를 갖는지 검토함.
+
+![pictures](https://user-images.githubusercontent.com/97942772/216820951-03c902e5-fac2-40a0-8b09-d89aa52a6f95.jpg)
+
+![pictures (1)](https://user-images.githubusercontent.com/97942772/216821100-f640a07c-4fb6-497d-b660-aabd0dc01fa5.jpg)
+
+![pictures (2)](https://user-images.githubusercontent.com/97942772/216821222-16f878ba-087d-4495-8ae8-6a0b7fc4f6bb.jpg)
+
++ Raw-count - GeTMM간의 R-squared 값이 모두 0.75 이상으로, GeTMM이나, Combet-seq의 사용시 이점이 크지 않음.
++ ALB, CD9의 경우 3개의 선으로 나눠지는 경향이 관측되는데, GeTMM의 보정 시 input으로 Combet-seq으로 보정된 파일을 넣어주기 때문임.
++ Batch effect correction 과정은 DB간 bias 를 일정 계수를 곱하여 산출함.
++ 결론적으로, Running time과 Processing 과정에서 사용되는 시간 소모에 비해 Normalizing method의 성능 차이는 크게 없으므로, 이후 연구에서 가장 간단한 방법인 raw count/library size 방법을 사용하고자 함.
+
+### 8. Gene Expression Level Check in My Data, by HKG(House Keeping Gene), TS(Tissue-Specific Gene)
++  이미 알려진 HKG, TS를 통해 technical validation을 진행함. HKG로 GAPDH, GUSB를 사용했고, Liver Specific Gene ALB, Adrenal Gland Specific Gene AS3MT를 사용함.
+
+<img width="947" alt="KakaoTalk_20230205_010156804" src="https://user-images.githubusercontent.com/97942772/216821472-4040d06a-1e5e-4dbd-b7bd-a8348efd6b9e.png">
+<img width="947" alt="KakaoTalk_20230205_010210426" src="https://user-images.githubusercontent.com/97942772/216821489-0059488c-cc1f-45ec-9c4d-b9e075e080e7.png">
+
++  X축은 tissue, Y축은 log(GeTMM)으로 boxplot을 사용함.(Raw Count/library size 보정 파일은 작업 중에 있어, 이미 만들어진 파일 사용)
++  두 유전자 모두 전체 45개 Tissue에서 고른 분포를 보이며, 보고된 House Keeping Gene에 적합함.
+
+<img width="947" alt="KakaoTalk_20230205_010220587" src="https://user-images.githubusercontent.com/97942772/216821499-5cdd6221-2efe-4cf7-b266-5adb31f70166.png">
+
++  Adrenal Gland에서의 발현량 중간값이 다른 tissue들에 비해 최소 100배 이상의 차이가 관찰됨.
+
+<img width="947" alt="KakaoTalk_20230205_010229982" src="https://user-images.githubusercontent.com/97942772/216821507-c84536ff-f454-4f66-bd86-40f1c8c7eba0.png">
+
 + Technical validation by known tissue marker gene 
 + Tissue specific gene marker, co-expression pattern searching
