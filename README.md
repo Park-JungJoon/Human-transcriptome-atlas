@@ -189,9 +189,14 @@ Unknown|522
 
 <img width="947" alt="KakaoTalk_20230205_010220587" src="https://user-images.githubusercontent.com/97942772/216821499-5cdd6221-2efe-4cf7-b266-5adb31f70166.png">
 
-+  Adrenal Gland에서의 발현량 중간값이 다른 tissue들에 비해 최소 100배 이상의 차이가 관찰됨.
++  Adrenal Gland에서의 AS3MT 발현량 중간값이 다른 tissue들에 비해 최소 100배 이상의 차이가 관찰됨.
 
 <img width="947" alt="KakaoTalk_20230205_010229982" src="https://user-images.githubusercontent.com/97942772/216821507-c84536ff-f454-4f66-bd86-40f1c8c7eba0.png">
 
-+ Technical validation by known tissue marker gene 
-+ Tissue specific gene marker, co-expression pattern searching
++ Liver 에서의 ALB 발현량 중간값이 다른 tissue들에 비해 최소 1000배 이상의 차이가 관찰됨.
++ 데이터의  TS/HKG searching을 위해 충분한 clean-up이 됨.
+
+### 9. Comparison HKG between known HKG gene set, made HKG gene set.
++ 표준 편차를 산술 평균으로 나눈 CV(coefficient of variation)값을 앞선 연구에 사용된 데이터의 각 Gene 마다 계산해, 전체 56660개의 Gene중 상위 20%, 발현량의 총합이 상위 80%인 Gene Set을 HKG라고 가정함. 예상된 HKG gene set을 /eevee/val/jjpark/atlas_getmm/myHKGs.txt에 저장함.
++ 이미 보고된 HKG gene set (e.g. [House Keeping Trascript Atlas](https://housekeeping.unicamp.br/?download))등과 비교하여, HKG 선정 기준을 확립하고자함.
++ Open Source 데이터는 대부분 Trainscript를 사용하여, GTF 파일을 통한 비교를 위한 data cleaning 과정 중에 있음.
