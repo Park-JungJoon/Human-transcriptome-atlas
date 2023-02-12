@@ -222,16 +222,17 @@ Expression|11.90|53.83|0.00|43625.05
 
 Data|CV High|CV Low
 -|-|-
-Expression High|1,896|13,441
-Expression Mid|1,580|1,114
-Expression Low|1,079|72
+Expression High|5,905|9,432
+Expression Mid|2,537|157
+Expression Low|1,149|2
 
 + 아래 표는 Public HKG gene set에 속한 gene(2,177개)들의 분포.
 
 Data|CV High|CV Low
 -|-|-
-Expression High|7|2,120
-Expression Mid|2|8
-Expression Low|2|1
+Expression High|62|2065
+Expression Mid|7|3
+Expression Low|3|0
+
 
 + 분포 결과, CV와 발현량으로 예측된 HKG 모델을 만들 때, 기존에 알려진 HKG 모델과 유사한 gene set을 만들 수 있음.
