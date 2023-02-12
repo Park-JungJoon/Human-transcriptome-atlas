@@ -199,7 +199,7 @@ Unknown|522
 ### 9. Comparison HKG between known HKG gene set, made HKG gene set.
 
 + 표준 편차를 산술 평균으로 나눈 CV(coefficient of variation)값을 HKG 지표로서 사용함.
-+ 대조군으로 [HRT Atlas](https://academic.oup.com/nar/article/49/D1/D947/5871367)에서 제공하는 2,834개의 유전자를 사용함.
++ 대조군으로 [HRT Atlas](https://academic.oup.com/nar/article/49/D1/D947/5871367)에서 제공하는 2,177개의 유전자를 사용함.
 + HRT Atlas에서 제공하는 유전자는 모두 protein coding gene으로, 갖고 있는 데이터에서도 protein coding gene 19,183개를 대상으로 연구를 실시함.
 + 각 Gene에 대한 CV의 분포는 아래 히스토그램과 같음. (X,Y축 모두 log10 scale)
 
@@ -226,7 +226,7 @@ Expression High|1,896|13,441
 Expression Mid|1,580|1,114
 Expression Low|1,079|72
 
-+ 아래 표는 Public HKG gene set에 속한 gene(2,834개)들의 분포.
++ 아래 표는 Public HKG gene set에 속한 gene(2,177개)들의 분포.
 
 Data|CV High|CV Low
 -|-|-
