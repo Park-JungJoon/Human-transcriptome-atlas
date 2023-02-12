@@ -197,6 +197,41 @@ Unknown|522
 + 데이터의  TS/HKG searching을 위해 충분한 clean-up이 됨.
 
 ### 9. Comparison HKG between known HKG gene set, made HKG gene set.
-+ 표준 편차를 산술 평균으로 나눈 CV(coefficient of variation)값을 앞선 연구에 사용된 데이터의 각 Gene 마다 계산해, 전체 56660개의 Gene중 상위 20%, 발현량의 총합이 상위 80%인 Gene Set을 HKG라고 가정함. 예상된 HKG gene set을 /eevee/val/jjpark/atlas_getmm/myHKGs.txt에 저장함.
-+ 이미 보고된 HKG gene set (e.g. [House Keeping Trascript Atlas](https://housekeeping.unicamp.br/?download))등과 비교하여, HKG 선정 기준을 확립하고자함.
-+ Open Source 데이터는 대부분 Trainscript를 사용하여, GTF 파일을 통한 비교를 위한 data cleaning 과정 중에 있음.
+
++ 표준 편차를 산술 평균으로 나눈 CV(coefficient of variation)값을 HKG 지표로서 사용함.
++ 대조군으로 [HRT Atlas](https://academic.oup.com/nar/article/49/D1/D947/5871367)에서 제공하는 2,834개의 유전자를 사용함.
++ HRT Atlas에서 제공하는 유전자는 모두 protein coding gene으로, 갖고 있는 데이터에서도 protein coding gene 19,183개를 대상으로 연구를 실시함.
++ 각 Gene에 대한 CV의 분포는 아래 히스토그램과 같음. (X,Y축 모두 log10 scale)
+
+![image](https://user-images.githubusercontent.com/97942772/218311589-2025c3cb-dd20-48cd-900d-6bf635959915.png)
+
++ 각 Gene에 대한 발현량 분포는 아래 히스토그램과 같음. (X,Y축 모두 log10 scale) 뱔현량은 gene당 GeTMM값의 총합/샘플 수 로 계산함.
+
+![image](https://user-images.githubusercontent.com/97942772/218311666-5a10a403-ef7c-43c4-a249-a59b3fa0618e.png)
+
++ CV값과 GeTMM 값의 평균에 대한 기본적인 통계치는 아래 표와 같음.
+
+Value|Median|Mean|Minimum|Maximum
+-|-|-|-|-
+CV Value|1.4881|4.0097|0.2617|198.4968
+Expression|11.90|53.83|0.00|43625.05
+
++ 각 gene들에 대해, Expression level을 3단계로 나눔. 전체 gene의 expression level의 상위 33%를 high, 하위 33%를 low, 중간을 mid로 나눔.
++ 각 gene들에 대해, CV level을 2단계로 나눔. 전체 gene의 CV 값의 상위 50%를 high, 하위 50%를 low로 나타냄. 
++ 아래 표는 분류된 기준에 따른 gene(19,183개)들의 분포.
+
+Data|CV High|CV Low
+-|-|-
+Expression High|1,896|13,441
+Expression Mid|1,580|1,114
+Expression Low|1,079|72
+
++ 아래 표는 Public HKG gene set에 속한 gene(2,834개)들의 분포.
+
+Data|CV High|CV Low
+-|-|-
+Expression High|7|2,120
+Expression Mid|2|8
+Expression Low|2|1
+
++ 분포 결과, CV와 발현량으로 예측된 HKG 모델을 만들 때, 기존에 알려진 HKG 모델과 유사한 gene set을 만들 수 있음.
