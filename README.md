@@ -236,3 +236,37 @@ Expression Mid|7|196
 Expression Low|16|8
 
 + 알려진 [database](https://pubmed.ncbi.nlm.nih.gov/32663312/)와 CV cut으로 자체적으로 만은 HKG set을 비교했을 때, 교집합은 대부분 CV값이 낮고, 발현량이 높은 gene들이다. 그러나, false positive가 많아, 샘플간 발현량 fold change 등으로 추가 filtering을 통해 HKG gene set을 얻을 예정이다.
+
+### 10. Predicting Tissue-Specific Gene Set.
+#### 10-1 Specificity Scoring (Tau) 
++ [선행 연구](https://academic.oup.com/bib/article/18/2/205/2562739#119555200)를 참고해, 해당 논문에서 가장 성능이 우수하다고 하는 Tau scoring을 사용했다. 
++ Scoing equation은 아래와 같다.
+
+<img width="288" alt="image" src="https://user-images.githubusercontent.com/97942772/219707084-a4b75272-dfdf-4108-b6b2-2ceedd576303.png">
+
+Xi : expression of the gene in tissue i
+N : Number of tissues
+
++ Tau scoring의 Xi는 해당 tissue에서의 발현량/모든 tissue에서 가장 발현량이 높은 tissue의 발현량이며, 모든 tissue에서 발현량이 비슷할 경우,  Xi 값이 커짐.
++ 1-Xi는 발현량이 일정할 경우, 값이 작아짐.
++ 따라서, Tau가 높다면, 발현량이 일정하지 않음을 시사함.
++ Tau값은 0-1로, 1에 가까울 수록 발현량이 일정하지 않고, 0에 가까울 수록 발현량이 일정함.
++ 모든 tissue의 gene expression mean을 구함. (/eevee/val/jjpark/TSgenefinding/means/TRANSPOSED_ALL_TISSUE_MeAN.tsv)
++ Tau 값을 구함. (/eevee/val/jjpark/TSgenefinding/means/answers/TAU_SORTED.txt)
++ Tau 값이 75% 이상인 gene들을 잠재적인 tissue-specific gene으로 분류함.
++ Gene 별 Tau 분포는 아래와 같음.
+
+![image](https://user-images.githubusercontent.com/97942772/219711266-f5e3f8d5-0b2c-4e97-8cae-0206c4e52eea.png)
+
+#### 10-2 Predicting Tissue-Specific Gene Set
++ 앞서 filtering된 gene set에 대해, TS gene set을 작성함.
++ TS의 기준은 해당 tissue에서의 발현량이 나머지 모든 조직보다 5배 이상 높은 경우 TS로 분류함. [선행 연구](https://www.science.org/doi/10.1126/science.1260419)를 참조.
++ /eevee/val/jjpark/TSgenefinding/means/answers/TS_ENRICHED_GENE_SORTED.tsv에 저장함.
+
+![image](https://user-images.githubusercontent.com/97942772/219717074-5e374be8-7820-41f7-8c84-5a1f4227e02c.png)
+  + 발현량 cutting 없이, 가장 높은 tissue의 발현량 평균이 다른 모든 tissue의 발현량 평균보다 높은 gene 개수의 분포.
+  + anal tissue는 TCGA에서 3개의 sample을 갖고 있어, noise가 심함. 45개의 tissue를 30개로 재조정하는 과정 중에 있음.
+  + 전체 개수는 1,374개로 발현량이 낮은 경우, 지나치게 고평가 되는 듯 하여, 다른 조건에서 분포를 확인함.
+
+![image](https://user-images.githubusercontent.com/97942772/219717754-6e0ffd1f-2211-4e0d-9026-0e74476306ae.png)
+  + 가장 높은 tissue의 발현량 평균 (GeTMM)이 1 이상이며, 다른 모든 tissue의 발현량 보다 8배 이상 높은 786개의 gene을 선별함.
