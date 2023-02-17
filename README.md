@@ -260,8 +260,7 @@ N : Number of tissues
 
 #### 10-2 Predicting Tissue-Specific Gene Set
 + 앞서 filtering된 gene set에 대해, TS gene set을 작성함.
-+ TS의 기준은 해당 tissue에서의 발현량이 나머지 모든 조직보다 5배 이상 높은 경우 TS로 분류함. [선행 연구](https://www.science.org/doi/10.1126/science.1260419)를 참조.
-+ /eevee/val/jjpark/TSgenefinding/means/answers/TS_ENRICHED_GENE_SORTED.tsv에 저장함.
++ TS의 기준은 해당 tissue에서의 발현량이 나머지 모든 조직보다 5배 이상 높은 경우 TS로 분류함(/eevee/val/jjpark/TSgenefinding/means/answers/TS_ENRICHED_GENE_SORTED.tsv). [선행 연구](https://www.science.org/doi/10.1126/science.1260419)를 참고.
 
 ![image](https://user-images.githubusercontent.com/97942772/219717074-5e374be8-7820-41f7-8c84-5a1f4227e02c.png)
   + 발현량 cutting 없이, 가장 높은 tissue의 발현량 평균이 다른 모든 tissue의 발현량 평균보다 높은 gene 개수의 분포.
@@ -270,3 +269,12 @@ N : Number of tissues
 
 ![image](https://user-images.githubusercontent.com/97942772/219717754-6e0ffd1f-2211-4e0d-9026-0e74476306ae.png)
   + 가장 높은 tissue의 발현량 평균 (GeTMM)이 1 이상이며, 다른 모든 tissue의 발현량 보다 8배 이상 높은 786개의 gene을 선별함.
+
+### 11. Data Supplementary
++ GEO/SRA 데이터 사용을 위해 [ARCHS4](https://maayanlab.cloud/archs4/) database에서 gene level raw count를 다운로드 받음.
++ ARCHS4의 분류 기준은 description에 특정 organ/tissue가 언급되면 해당 tissue로 간주하는 기준임.
++ 따라서, Liver cancer patient의 whole blood인 경우, 두 tissue에서 모두 발견되는 경우가 관찰됨.
++ 정확한 tissue의 분류 기준에 따라, source name이 정확하게 tissue 명인 데이터만 사용함. (e.g. tissue : brain (사용), tissue : brain;thalamus(사용하지 않음.)))
++ 앞서 작성한 데이터와 교집합이며, 발현량이 높으며, major tissue 30개로 재조정함. 
++ 전체 8,747개의 sample을 추가함. 
++ defaultdict(<class 'int'>, {'Bladder': 8, 'Brain': 584, 'Kidney': 277, 'Spleen': 43, 'Liver': 1938, 'Blood': 3970, 'Uterus': 1, 'Lung': 382, 'Breast': 197, 'Thyroid': 59, 'Stomach': 29, 'Testis': 35, 'Skin': 236, 'Prostate': 105, 'Adipose Tissue': 402, 'Pancreas': 109, 'Heart': 157, 'Esophagus': 32, 'Ovary': 30, 'Thymus': 59, 'colon': 94})
