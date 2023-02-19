@@ -270,6 +270,34 @@ N : Number of tissues
 ![image](https://user-images.githubusercontent.com/97942772/219717754-6e0ffd1f-2211-4e0d-9026-0e74476306ae.png)
   + 가장 높은 tissue의 발현량 평균 (GeTMM)이 1 이상이며, 다른 모든 tissue의 발현량 보다 8배 이상 높은 786개의 gene을 선별함. [Distribution link](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/Tissue%20specific%20gene%20distribution.md)
 
+#### 10-3 Pathway/Enrichment analysis.
++ 발현량 8배 이상, GeTMM > 1 이상의 기준에 필터링된 predicted-TSgene에 대해, pathway/enrichment analysis를 진행함.
++ 가장 많은 유전자를 가진 5개 tissue (Testis, Liver, Muscle, Pancreas, Eye)에 대해 조사함.
++ [Enrichr](https://maayanlab.cloud/Enrichr/enrich)에 predicted-TSgene를 사용함.
+
++ Testis (Pathway / Onthologies)
+
+![image](https://user-images.githubusercontent.com/97942772/219939447-94d7e884-6dfa-4938-ba22-6d3677fff83d.png)
+
++ Liver (Pathway / Transcription)
+
+![image](https://user-images.githubusercontent.com/97942772/219939807-c996ede2-01fd-4030-b7cb-695e14babe89.png)
+
++ Muscle (Pathway / Onthologies)
+
+![image](https://user-images.githubusercontent.com/97942772/219939864-b03316a9-ebd8-49ae-aa8d-57d87d365238.png)
+
++ Pancreas (Pathway / Onthologies)
+
+![image](https://user-images.githubusercontent.com/97942772/219939920-e7388a0b-3303-46e2-8fc1-0ed273b40825.png)
+
+
++ Eye (Pathway / Onthologies)
+
+![image](https://user-images.githubusercontent.com/97942772/219939473-82ae0795-173f-4999-8a89-c7a3bbdd3e0d.png)
+
++ 인체 내 가장 광범위한 기능을 하는 Liver 이외의 다른 tissue에서는 해당 tissue와 직관적이고 밀접하게 관련이 되어있는 pathway/onthologies가 관찰됨.
+
 ### 11. Data Supplementary
 + GEO/SRA 데이터 사용을 위해 [ARCHS4](https://maayanlab.cloud/archs4/) database에서 gene level raw count를 다운로드 받음.
 + ARCHS4의 분류 기준은 description에 특정 organ/tissue가 언급되면 해당 tissue로 간주하는 기준임.
