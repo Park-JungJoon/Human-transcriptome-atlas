@@ -275,7 +275,7 @@ N : Number of tissues
 + 가장 많은 유전자를 가진 5개 tissue (Testis, Liver, Muscle, Pancreas, Eye)에 대해 조사함.
 + [Enrichr](https://maayanlab.cloud/Enrichr/enrich)에 predicted-TSgene를 사용함.
 
-+ Testis (Pathway / Onthologies)
++ Eye (Pathway / Onthologies)
 
 ![image](https://user-images.githubusercontent.com/97942772/219939447-94d7e884-6dfa-4938-ba22-6d3677fff83d.png)
 
@@ -292,7 +292,7 @@ N : Number of tissues
 ![image](https://user-images.githubusercontent.com/97942772/219939920-e7388a0b-3303-46e2-8fc1-0ed273b40825.png)
 
 
-+ Eye (Pathway / Onthologies)
++ Testis (Pathway / Onthologies)
 
 ![image](https://user-images.githubusercontent.com/97942772/219939473-82ae0795-173f-4999-8a89-c7a3bbdd3e0d.png)
 
