@@ -314,3 +314,6 @@ Liver|1938
 Brain|584 
 Adipose Tissue|402
 Lung|382
+
+
+![image](https://user-images.githubusercontent.com/97942772/220850577-132d3929-3687-478f-83d8-6dd782b6afdd.png)
