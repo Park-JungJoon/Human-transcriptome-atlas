@@ -331,6 +331,6 @@ Lung|382
 
 + ARCHS4에서 새로운 데이터를 추가하고, major tissue 30개로 filtering 했을 경우, testis에 대해, foldchange 8이상, 발현량 1 이상의 기준을 사용해 Testis-specific gene predicting을 다시하고, 그 결과는 아래와 같음.
 
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/97942772/221406003-d7e8dac2-34eb-4ec1-8a8e-0ab86af8e592.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97942772/221406003-d7e8dac2-34eb-4ec1-8a8e-0ab86af8e592.png">
 
 + Tissue 분류 기준을 높여 noise를 줄인 결과, 이전에 비해 확실하게 predicting이 정확함을 보임.  
