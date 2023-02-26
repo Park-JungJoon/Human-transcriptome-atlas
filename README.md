@@ -315,5 +315,22 @@ Brain|584
 Adipose Tissue|402
 Lung|382
 
++ 추가된 sample의 tissue 분포는 아래와 같음.
 
 ![image](https://user-images.githubusercontent.com/97942772/220850577-132d3929-3687-478f-83d8-6dd782b6afdd.png)
+
+## 12. TS gene re-analysis
++ TCGA와 GTEx데이터만을 사용했을 때, tissue의 종류를 45개로 설정했다.
++ Tau/Fold change를 구하는 과정에서 sample수가 적은 not-majoir tissues(anal, ETC, Unknown...)등이 noise를 일으켰고, 그 결과 Tissue Specific Gene을 찾는데에 어려움이 있었다.
++ 45개 tissue 데이터로 Testis-specific gene을 예측했다. Fold change 8 이상이며, 발현량이 1 이상인 gene들을 후보군으로 뽑았고, [선행연구](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0215184)와 비교함.
+
+
+![image](https://user-images.githubusercontent.com/97942772/221407057-9d308706-7acf-4cd9-93c6-015c26a665c3.png)
+
++ 전체 239개의 Testis gene 중, 45개의 gene만이 교집합인데, 그 이유는 tissue가 45개이기 때문에, 앞서 말한 non-major tissue의 경우, sample수가 적어 fold change를 구할 때 비정상적으로 높거나 낮은 발현량을 보이기 때문임.
+
++ ARCHS4에서 새로운 데이터를 추가하고, major tissue 30개로 filtering 했을 경우, testis에 대해, foldchange 8이상, 발현량 1 이상의 기준을 사용해 Testis-specific gene predicting을 다시하고, 그 결과는 아래와 같음.
+
+<img width="262" alt="image" src="https://user-images.githubusercontent.com/97942772/221406003-d7e8dac2-34eb-4ec1-8a8e-0ab86af8e592.png">
+
++ Tissue 분류 기준을 높여 noise를 줄인 결과, 이전에 비해 확실하게 predicting이 정확함을 보임.  
