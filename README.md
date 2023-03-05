@@ -302,18 +302,19 @@ N : Number of tissues
 + GEO/SRA 데이터 사용을 위해 [ARCHS4](https://maayanlab.cloud/archs4/) database에서 gene level raw count를 다운로드 받음.
 + ARCHS4의 분류 기준은 description에 특정 organ/tissue가 언급되면 해당 tissue로 간주하는 기준임.
 + 따라서, Liver cancer patient의 whole blood인 경우, 두 tissue에서 모두 발견되는 경우가 관찰됨.
-+ 정확한 tissue의 분류 기준에 따라, source name이 정확하게 tissue 명인 데이터만 사용함. (e.g. tissue : brain (사용), tissue : brain;thalamus(사용하지 않음.)))
++ 정확한 tissue의 분류 기준에 따라, source name이 정확하게 tissue 명인 데이터만 사용함.
 + 앞서 작성한 데이터와 교집합이며, 발현량이 높으며, major tissue 30개로 재조정함. 
-+ 전체 8,747개의 sample을 추가함. 
++ 전체 12,393개의 sample을 추가함. 
 + 가장 많은 sample이 추가된 tissue 5개는 아래와 같음.[전체 추가 sample 분포](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplementary%20data/GEO_supplement_data.md)
 
 Tissue|Count
 -|-
-Blood|3970 
-Liver|1938 
-Brain|584 
-Adipose Tissue|402
-Lung|382
+Blood|5,315
+Liver|2,329
+Brain|712
+Lung|546
+Adipose Tissue|392
+
 
 + 추가된 sample의 tissue 분포는 아래와 같음.
 
@@ -334,3 +335,34 @@ Lung|382
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97942772/221406003-d7e8dac2-34eb-4ec1-8a8e-0ab86af8e592.png">
 
 + Tissue 분류 기준을 높여 noise를 줄인 결과, 이전에 비해 확실하게 predicting이 정확함을 보임.  
+
+## 13. HKG/TS by 3 database intersection
++ 세 데이터 베이스를 나누고, 앞선 HKG/TS 분석을 다시 진행했다.
+
+### 13-1 . HKG
+  + ##9 에서 작성된 대로, CV top 50%, expression top 33%를 대상으로 HKG를 선정했다. 세 데이터 베이스의 HKG 분포는 아래 벤다이어그램과 같다. 
+  ![venn_diagram](https://user-images.githubusercontent.com/97942772/222967196-339e1dcd-ba38-447f-8d1e-75c1f554b503.png)
+
+
+### 13-2. TS
+  + ##10 에서 작성된 대로, Tau percentile 25%, expression > 500, Foldchange 5의 기준으로 세 데이터 베이스 각각 tissue specific gene을 조사함. 각 데이터 베이스에서 TS gene 개수가 상위 5개인 조직과, TS gene 개수 분포는 아래와 같음.
+  
++ GEO
+
+Tissue|Count
+-|-
+Testis|1155
+Liver|203
+Brain|126
+Skin|109
+Muscle|99
+
++ GTEX
+
+Tissue|Count
+-|-
+Testis|1155
+Liver|203
+Brain|126
+Skin|109
+Muscle|99
