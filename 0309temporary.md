@@ -1,3 +1,4 @@
+# 0309 토의 보고 
 + 기존에 연구는 세 데이터베이스를 하나의 gene count table로 만들고, HKG, Tissue specific gene을 여러 parameter를 통해 조정함. 
 + 현재 세 데이터 베이스 별 HKG, TS를 조사하고, 그 교집합을 HKG, TS로 규정하고자함. 
 + HKG의 분포는 아래 벤 다이어그램과 같고, intersection HKG를 사용 가능하며, 선행연구와 유의함. 
