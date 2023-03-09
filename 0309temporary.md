@@ -40,7 +40,7 @@ Muscle|131
 <img width="270" alt="image" src="https://user-images.githubusercontent.com/97942772/223967837-b10c37dc-5672-45a8-a466-d54031c5a64a.png">
 
 
-+ Liver를 제외한 나머지 tissue에서 Intersection TS를 사용하기 어려움. 교집합의 절대적인량이 부족함. 
++ Liver를 제외한 나머지 tissue에서 Intersection TS를 사용하기 어려움. 교집합의 절대적인 개수가 부족함. 
 
 + TS는 해당 tissue 이외의 모든 tissue의 median expression의 5배 이상의 발현량을 가질 때 TS로 정의함. (추가적인 parameter로 Tau, expression level 사용.)
 + Tissue간 비교가 있어, 데이터 베이스 별 tissue 구성이 다르며, sample 수의 차이가 있음. 
