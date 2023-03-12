@@ -347,22 +347,113 @@ Adipose Tissue|392
 ### 13-2. TS
   + ##10 에서 작성된 대로, Tau percentile 25%, expression > 500, Foldchange 5의 기준으로 세 데이터 베이스 각각 tissue specific gene을 조사함. 각 데이터 베이스에서 TS gene 개수가 상위 5개인 조직과, TS gene 개수 분포는 아래와 같음.
   
-+ GEO
++ GEO : 1979 TS genes
 
 Tissue|Count
 -|-
-Testis|1155
-Liver|203
-Brain|126
-Skin|109
-Muscle|99
+Liver|344
+Pituitary|269
+Blood|213
+Testis|164
+Kidney|145
+
+
+
++ GTEX : 3022 TS genes
+
+Tissue|Count
+-|-
+Testis|1597
+Liver|245
+Brain|167
+Muscle|131
+Skin|131
+
++ TCGA : 1559 TS genes
+
+Tissue|Count
+-|-
+Brain|301
+Liver|262
+Testis|179
+Adrenal_Gland|97
+Thymus|95
+
++ Intersection : 390 TS genes
+
+Tissue|Count
+-|-
+Liver|167
+Brain|61
+Testis|61
+Pancreas|21
+Blood|20
+
+### 13-2. Group Enriched Genes
++ Group Enriched Gene은 2-6개의 tissue에서 나머지 tissue에 비해 5배이상 발현된 gene을 뜻함. [선행연구 참조](https://www.science.org/doi/10.1126/science.1260419)
+각 DB 별 GE (Group Enriched)의 분포는 아래와 같음. Tissue 별 count는 중복되게 셈.
+
++ GEO : 745 GE genes
+
+Tissue|Count
+-|-
+Kidney|713
+Liver|379
+Blood|310
+Spleen|259
+Esophagus|211
+
++ TCGA : 479 GE genes
+
+Tissue|Count
+-|-
+Liver|265
+Lymph_Nodes|249
+Blood|228
+Large_Intestine|194
+Adrenal_Gland|174
+
++ GTEX : 326
+
+Tissue|Count
+-|-
+Blood|196
+Muscle|151
+Liver|139
+Heart|131
+Blood_Vessel|83
+
++ 세 데이터 베이스에서 tissue 조합이 같으며, GE인 gene은 없다. 
+
+## 14. Single Exon/ Multi Exon Genes
++ Human Single Exon Gene Database [SinEx2](https://v2.sinex.cl/)에서 1,793개의 gene을 Inronless gene (Single exon gene)으로 정함.
++ 1,9151개의 Protein coding gene에 대해, DB별 TS/HKG/exon type을 기재한 파일을 "/eevee/val/jjpark/RNA_SEQ_ATLAS/four_intron/GENE_ALL_INFO_TS_HKG_INTRON.tsv"에 저장함.
+
++ 먼저, 각 DB 별 MEG(Multi Exon Gene) 대비 각 조직 별 평균 SEG 발현량 box plot은 아래와 같음
++ x축은 tissue, 각 box의 component는 해당 tissue에서 발현되는 gene의 평균 발현량이다. SEG와 MEG를 따로 표기하고, y축은 로그 스케일.
 
 + GTEX
 
-Tissue|Count
--|-
-Testis|1155
-Liver|203
-Brain|126
-Skin|109
-Muscle|99
+![gtex_boxplot](https://user-images.githubusercontent.com/97942772/224544705-77081eed-2b17-47e1-949a-39d5e0a4813c.png)
+
++GEO
+
+![geo_boxplot](https://user-images.githubusercontent.com/97942772/224544730-98340fb3-0437-4b59-9ac5-62c522e656da.png)
+
+
++ TCGA
+
+![tcga_boxplot](https://user-images.githubusercontent.com/97942772/224544763-d894fd03-6aa6-4d8a-a621-40a9f7088ca1.png)
+
++ 세 데이터베이스에서 모두 SEG는 MEG에 비해 현저히 낮은 발현량을 보임. Intron이 Expression level regulation을 하기에, 그 영향을 받지 않는 것으로 사료됨.
++ 앞서 언급한, DB별 TS/HKG/exon type을 기재한 파일을 토대로, TS와 HKG에서 SEG가 차지하는 비중을 확인함.
++ SEG는 1,793개로, MEG의 약 10%임.
++ 2개 이상의 DB에서 TS/HKG로 분류된 gene을 TS/HKG로 규정하고, TS의 MEG/SEG 비율 분포를 확인함.
+
+Type|TS|HKG
+-|-|-
+MEG|1,228|4,903
+SEG|146|92
+
++ TS의 경우, MEG/SEG의 비율이 대략 10배로 전체 gene pattern과 비슷하나, HKG의 경우 50배 이상이 차이남.
++ Single Exon Gene이 HKG에는 극히 적게 발현되는 이유를 후속연구함.
