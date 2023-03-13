@@ -35,6 +35,8 @@ Muscle|131
 
 
 + 아래 벤다이어 그램은 가장 intersection TS의 분포.
+
+
 <img width="270" alt="image" src="https://user-images.githubusercontent.com/97942772/223967682-dbe0a9b7-7130-4c0e-97a5-25e0b6d7b415.png">
 <img width="270" alt="image" src="https://user-images.githubusercontent.com/97942772/223967743-e0d12536-d8d0-40f6-ae4f-37881b2ec324.png">
 <img width="270" alt="image" src="https://user-images.githubusercontent.com/97942772/223967810-62d62d1a-a625-414a-b25f-f13491a1df7c.png">
