@@ -436,7 +436,7 @@ Blood_Vessel|83
 
 ![gtex_boxplot](https://user-images.githubusercontent.com/97942772/224544705-77081eed-2b17-47e1-949a-39d5e0a4813c.png)
 
-+GEO
++ GEO
 
 ![geo_boxplot](https://user-images.githubusercontent.com/97942772/224544730-98340fb3-0437-4b59-9ac5-62c522e656da.png)
 
