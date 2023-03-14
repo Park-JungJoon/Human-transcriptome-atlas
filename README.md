@@ -449,11 +449,13 @@ Blood_Vessel|83
 + 앞서 언급한, DB별 TS/HKG/exon type을 기재한 파일을 토대로, TS와 HKG에서 SEG가 차지하는 비중을 확인함.
 + SEG는 1,793개로, MEG의 약 10%임.
 + 2개 이상의 DB에서 TS/HKG로 분류된 gene을 TS/HKG로 규정하고, TS의 MEG/SEG 비율 분포를 확인함.
+TS score 0.6 이상, HKG score 1.5 이상을 각각 TS, HKG로 규정함.
 
 Type|TS|HKG
 -|-|-
-MEG|1,228|4,903
-SEG|146|92
+MEG|3,631|4,821
+SEG|464|90
+
 
 + TS의 경우, MEG/SEG의 비율이 대략 10배로 전체 gene pattern과 비슷하나, HKG의 경우 50배 이상이 차이남.
 + Single Exon Gene이 HKG에는 극히 적게 발현되는 이유를 후속연구함.
