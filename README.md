@@ -459,3 +459,27 @@ SEG|464|90
 
 + TS의 경우, MEG/SEG의 비율이 대략 10배로 전체 gene pattern과 비슷하나, HKG의 경우 50배 이상이 차이남.
 + Single Exon Gene이 HKG에는 극히 적게 발현되는 이유를 후속연구함.
+
+## 14. Promoter anlaysis
++ 데이터 normaliztion을 GeTMM의 방식으로 Library Size, Gene Length 보정함. 
++ 새로운 데이터 셋으로 앞선 TS/HKG/SEG 분석을 마침. /eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/e_promoter
++ 새로운 분석으로, 새 데이터 셋의  TS에 promoter sequence 분석을 진행함. 
++ TS는 가장 개수가 많은 Liver, Blood, Brain 세 Tissue를 대상으로 진행함. 
++ Promoter sequence는 [EPD New](https://epd.epfl.ch/EPDnew_database.php)에서 다운로드 받음.  
++ MEME으로, sequence 로고 분석을 진행함. Running options : ./meme/bin/meme liver_-o ./output_meme -dna -revcomp -mod zoops -nmotifs 10 -p 50
+### 14-1. Liver (3 DB intersection, 141)
++ e-Value가 0.05 이하으로 신뢰성이 높은 motif는 아래와 같음.
+
+![RVDSKYYWTATAAAA](https://user-images.githubusercontent.com/97942772/226185339-049aa1a9-3a32-40be-9a8b-026130c4f083.png)
+![AGMTWCMAGDTAGTVMAMTKAARTTMAKA](https://user-images.githubusercontent.com/97942772/226185347-2ea8b49b-9405-4c0a-963f-0a721a119a03.png)
+![YYCWGYCYCYHCCTKYCYTSH](https://user-images.githubusercontent.com/97942772/226185354-a99ffbb6-687b-447f-bdbc-3f01089c89b8.png)
+
+### 14-2. Brain (3 DB intersection,26)
++ e-Value가 0.05 이하으로 신뢰성이 높은 motif는 아래와 같음.
+
+![CHNMTCCTCTTVYTTBTGCW](https://user-images.githubusercontent.com/97942772/226185402-be727a73-26fc-4998-81ab-f37467e997dd.png)
+
+### 14-3. Blood (3 DB intersection, 21)
++ Blood는 e-value가 0.005 이하로 신뢰성이 높은 motif가 없음. 
+
++ 3 DB intersection gene의 개수가 적어서 e-Value가 충분히 확보되지 못한 문제가 있음. Gene TS scoring을 통해 추가 분석을 진행할 예정임.
