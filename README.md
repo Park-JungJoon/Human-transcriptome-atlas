@@ -483,3 +483,7 @@ SEG|464|90
 + Blood는 e-value가 0.005 이하로 신뢰성이 높은 motif가 없음. 
 
 + 3 DB intersection gene의 개수가 적어서 e-Value가 충분히 확보되지 못한 문제가 있음. Gene TS scoring을 통해 추가 분석을 진행할 예정임.
+
+
+
+<img width="307" alt="image" src="https://user-images.githubusercontent.com/97942772/231052521-05715bb2-b344-4c6e-816b-72c9171fc645.png">
