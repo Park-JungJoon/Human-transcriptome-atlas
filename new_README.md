@@ -1,11 +1,13 @@
 # Human Transcriptome Atlas
 본 연구에서는 Public bulk-RNA seq database의 데이터를 취합하고, 종합적인 분석 결과를 웹 앱을 통해 공개하는 것을 목적으로함.
 
+----
+
 </br>
 # PART A. Data Collecting / Merging 
 ## 1. Data Collecting
 + Public Human Transcriptome Database는 대표적으로 GEO, GTEx, TCGA가 있음.
-+ 위의 데이터 베이스 중, GEO는 각 연구 별 자료의 형식이 통일되어 있지 않아, [ARCHS4](https://maayanlab.cloud/archs4/) database에서 gene level raw count를 다운로드 받음.
++ 위의 데이터 베이스 중, GEO는 각 연구 별 자료의 형식이 통일되어 있지 않아, [ARCHS4](https://maayanlab.cloud/archs4) database에서 gene level raw count를 다운로드 받음.
 + 본 연구에서는 먼저 통합 가능한 GTEx, TCGA, GEO의 데이터를 통합하고, 부족한 조직의 보충을 SRA에서 하고자함.
 
 </br>
@@ -63,11 +65,16 @@
 
 </br>
 </br>
+---
 
 # PART B. Data Handling
 ## 6. Global Normalization
   + Sample 간 비교를 위해 read depth (library size) 보정과, gene lenth 보정이 필요함. 
-  + 두 보정법을 모두 차용한 [GeTMM] (https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2246-7)을 사용함.
+  + 두 보정법을 모두 차용한 [GeTMM](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2246-7) 을 사용함.
   + GeTMM의 경우, RPK를 계산한 후 (Gene length 보정) 이후 edgeR 모듈의 TMM 계산 과정을 거침. 
   + TCGA의 경우, FPKM으로부터 Gene Length를 계산하였고, GTEx는 자체적으로 사용하는 Gene Length를 파싱하여 사용함.
 + RPK를 계산한 파일을 (/panpyro/alfa/jjpark/adjusted_merge/split_by_db/output_of_R)에 저장하였음.
+
+## 7. House Keeping Gene Searching 
+  + 표준 편차를 산술 평균으로 나눈 CV(coefficient of variation)값을 HKG 지표로서 사용함.
+  + 
