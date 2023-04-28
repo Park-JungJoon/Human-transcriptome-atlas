@@ -4,6 +4,7 @@
 ----
 
 </br>
+
 # PART A. Data Collecting / Merging 
 ## 1. Data Collecting
 + Public Human Transcriptome Database는 대표적으로 GEO, GTEx, TCGA가 있음.
