@@ -227,8 +227,8 @@ SEG|464|90
 
 
 + TS의 경우, MEG/SEG의 비율이 대략 10배로 전체 gene pattern과 비슷하나, HKG의 경우 50배 이상이 차이남.
-+ Single Exon Gene이 HKG에는 극히 적게 발현되는 이유를 후속연구함.
 
 ## 10. Promoter anlaysis
   + [EPDnew](https://epd.epfl.ch/human/human_database.php?db=human) 데이터 베이스에서 human promoter sequence를 모두 얻음.
-  +  16,246개의 gene에 대해 
+  +  16,246개의 gene에 대해 promoter sequence (-50 ~ 10 bp from transcription start site.), major motif  (TATA box, Initiatie region, CCAAT box, GC box), promoter type ([Dreos et al., 2016](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005144)) 정보를 다운로드 받음.
+  +  앞선 7-9 까지의 연구 내용;각 DB 별 TS / HKG prediction, TS score, SEG/MEG 와 Promoter comprehensive information을 포함한 Gene-centric data table을 만듦. (/eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/new_d_ts/FINAL_ver1.tsv)
