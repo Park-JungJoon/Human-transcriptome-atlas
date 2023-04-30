@@ -48,6 +48,8 @@
 
 ## 4. Distribution of Intergrated Data
 
++ 새로운 데이터로 통합중에 있습니다. Visualization 끝나는대로 업데이트 하겠습니다.
+
 </br>
 
 ## 5. Gene Count Table Intergrating 
@@ -64,9 +66,12 @@
 ###  5.2 The bias between databases
   + DB와 Tissue에 따른 bias, distribution 파악 하기 위해, 차원 축소 그래프 UMAP (3D)를 통해 확인하였다.
 
++ 현재 Panpyro Rstudio의 문제로, plotting만 못했습니다. [Supplementary data](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplymentary%20Data/R_data_april_embedding_nn_10_mindis_0_1.csv)에 csv coordinate 파일을 업로드하였습니다. 월요일 오전중에 업데이트 하겠습니다.
+
 </br>
 </br>
----
+
+------
 
 # PART B. Data Handling
 ## 6. Global Normalization
@@ -232,4 +237,4 @@ SEG|464|90
 ## 10. Promoter anlaysis
   + [EPDnew](https://epd.epfl.ch/human/human_database.php?db=human) 데이터 베이스에서 human promoter sequence를 모두 얻음.
   +  16,246개의 gene에 대해 promoter sequence (-50 ~ 10 bp from transcription start site.), major motif  (TATA box, Initiatie region, CCAAT box, GC box), promoter type ([Dreos et al., 2016](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005144)) 정보를 다운로드 받음.
-  +  앞선 7-9 까지의 연구 내용;각 DB 별 TS / HKG prediction, TS score, SEG/MEG 와 Promoter comprehensive information을 포함한 Gene-centric data table을 만듦. (/eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/new_d_ts/FINAL_ver1.tsv)
+  +  앞선 7-9 까지의 연구 내용;각 DB 별 TS / HKG prediction, TS score, SEG/MEG 와 Promoter comprehensive information을 포함한 Gene-centric data table을 만듦. (/eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/new_d_ts/FINAL_ver1.tsv) [link](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplymentary%20Data/GEECENTRIC_TABLE_FINAL.tsv)
