@@ -1,0 +1,41 @@
+library('data.table')
+#gtex = fread("./INTER_GTEX_PTN_GCT.tsv", sep2 = "\t", header = TRUE)
+tcga = fread("./INTER_TCGA_PTN_GCT.tsv", sep2 = "\t", header = TRUE)
+#geo  =  fread("./INTER_GEO_PTN_GCT.tsv", sep2 = "\t", header = TRUE)
+
+#df.gtex <- as.data.frame(gtex)
+#row.names(df.gtex) <- df.gtex$Gene
+#df.gtex <- subset(df.gtex, select = -Gene)
+#df.gtex <- as.data.frame(df.gtex)
+#gtex_cv <- apply(df.gtex, 1, function(x) {sd(x)/mean(x) })
+#gtex_exp <- rowSums(df.gtex)
+#tmp.cv <- as.data.frame(gtex_cv)
+#tmp.exp <- as.data.frame(gtex_exp)
+#merged_gtex <- merge(tmp.cv,tmp.exp,by = "row.names")
+#colnames(merged_gtex) = c("Gene","CV","Exp_Sum")
+#write.table(merged_gtex, file = './GTEX_CV_EXP.tsv', quote = FALSE, sep = '\t',row.names = FALSE)
+
+df.tcga <- as.data.frame(tcga)
+row.names(df.tcga) <- df.tcga$Gene
+df.tcga <- subset(df.tcga, select = -Gene)
+df.tcga <- as.data.frame(df.tcga)
+tcga_cv <- apply(df.tcga, 1, function(x) {sd(x)/mean(x) })
+tcga_exp <- rowSums(df.tcga)
+tmp.cv <- as.data.frame(tcga_cv)
+tmp.exp <- as.data.frame(tcga_exp)
+merged_tcga <- merge(tmp.cv,tmp.exp,by = "row.names")
+colnames(merged_tcga) = c("Gene","CV","Exp_Sum")
+write.table(merged_tcga, file = './TCGA_CV_EXP.tsv', quote = FALSE, sep = '\t',row.names = FALSE)
+
+#df.geo <- as.data.frame(geo)
+#row.names(df.geo) <- df.geo$Gene
+#df.geo <- subset(df.geo, select = -Gene)
+#df.geo <- as.data.frame(df.geo)
+#geo_cv <- apply(df.geo, 1, function(x) {sd(x)/mean(x) })
+#geo_exp <- rowSums(df.geo)
+#tmp.cv <- as.data.frame(geo_cv)
+#tmp.exp <- as.data.frame(geo_exp)
+#merged_geo <- merge(tmp.cv,tmp.exp,by = "row.names")
+#colnames(merged_geo) = c("Gene","CV","Exp_Sum")
+#write.table(merged_geo, file = './GEO_CV_EXP.tsv', quote = FALSE, sep = '\t',row.names = FALSE)
+
