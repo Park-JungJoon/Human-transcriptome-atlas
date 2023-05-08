@@ -260,3 +260,11 @@ SEG|464|90
 
 ![GEO_ENSG00000121410](https://user-images.githubusercontent.com/97942772/236739619-770f0af5-4fe3-4952-bacd-baf3d5973f58.png)
 
++ 위와 같이 구성한 이유는, 유저의 request마다 plot을 계산해야하는 메모리 부담을 덜고자 함. 
++ 이외에도, web DB에 필수적인 meta data, tissue mean expression table등의 backend data를 /eevee/val/jjpark/webservice/data_back/에 저장함.
+
+## 13. Web DB Coding
++ Leafeon 서버에서 작업중에 있음.(/leafeon/analysis1/jjpark/atlas_webapp)
+<img width="460" alt="image" src="https://user-images.githubusercontent.com/97942772/236739983-d1bfb332-9ca1-4fe2-bd1e-5a6108abc9d2.png">
+
++ Bootstrap을 이용해 위의 템플릿에 데이터를 연결하는 작업 중에 있음. 
