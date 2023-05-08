@@ -238,3 +238,25 @@ SEG|464|90
   + [EPDnew](https://epd.epfl.ch/human/human_database.php?db=human) 데이터 베이스에서 human promoter sequence를 모두 얻음.
   +  16,246개의 gene에 대해 promoter sequence (-50 ~ 10 bp from transcription start site.), major motif  (TATA box, Initiatie region, CCAAT box, GC box), promoter type ([Dreos et al., 2016](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005144)) 정보를 다운로드 받음.
   +  앞선 7-9 까지의 연구 내용;각 DB 별 TS / HKG prediction, TS score, SEG/MEG 와 Promoter comprehensive information을 포함한 Gene-centric data table을 만듦. (/eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/new_d_ts/FINAL_ver1.tsv) [link](https://github.com/Park-JungJoon/Human-transcriptome-atlas/blob/main/Supplymentary%20Data/GEECENTRIC_TABLE_FINAL.tsv)
+
+------
+
+# PART C. Web DB Constructure
+## 11. Program Selection
++ [Django](https://docs.djangoproject.com/ko/4.2/intro/)를 통해 Web App 구축을 하고자함.
++ 아래와 같은 이유로 Django를 선정함
+  + Gene별 URL 이동이 Shiny를 통한 구현이 어려움.
+  + Django 사용시 어려운 점은 Model - View - HTML templates - User 등의 복잡한 구조를 통해 구축하는 점인데, Shiny R/Python을 통한 구축 시에도 참조한 사이트에서 Django와 비슷한 구조로 구축함. 
+  + 이후 scRNA-seq 데이터 베이스를 구축할 때, 완성도 높은 사이트를 만드려면 필수적이라고 판단함. 
+ 
+## 12. Dataset Making
+<img width="502" alt="image" src="https://user-images.githubusercontent.com/97942772/236738938-24117b48-1392-4516-b6e2-e65479d1bf19.png">
+
++ 위의 [Human Protein Atlas](https://www.proteinatlas.org/ENSG00000131095-GFAP)를 참조하여 사이트를 구상중에 있음
++ Gene-Centric page에서는 HKG/TS 분류 및 Promoter information, Expression box plot을 포함하는 정보를 제공하고자 함.
++ 검색 창을 통해 원하는 ENSG number을 통해 넘어가고자함. 
+
++ '/eevee/val/jjpark/webservice/data_back/boxplots/' 디렉토리에 아래와 같은 gene 1개에 대한 box plot을 3개 DB를 대상으로 총 57,454개 저장함.
+
+![GEO_ENSG00000121410](https://user-images.githubusercontent.com/97942772/236739619-770f0af5-4fe3-4952-bacd-baf3d5973f58.png)
+
