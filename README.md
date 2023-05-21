@@ -265,6 +265,17 @@ SEG|464|90
 
 ## 13. Web DB Coding
 + Leafeon 서버에서 작업중에 있음.(/leafeon/analysis1/jjpark/atlas_webapp)
-<img width="460" alt="image" src="https://user-images.githubusercontent.com/97942772/236739983-d1bfb332-9ca1-4fe2-bd1e-5a6108abc9d2.png">
++ Shiny for Python을 이용해 작업중에 있음.
++ 크게 3 페이지로 나누고, 첫번째 페이지에서는 Gene-Centric analysis 결과를 보고하고자함. 
++ Gene의 TS/HKG 여부, Promoter information 등의 정보를 제공함. 
++ 이외에도, 3 database의 boxplot의 정보를 공개함. 
++ 아래 이미지와 같게 기능 구현함. 
 
-+ Bootstrap을 이용해 위의 템플릿에 데이터를 연결하는 작업 중에 있음. 
+<img width="849" alt="image" src="https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/ab6b5e52-772d-4422-954e-37620f189138">
+
++ UI 개선 및 이미지 해상도 조절 등의 세부 조정 사항이 필요함.
+
+
+## Next Week Goal
++ UI 개선
++ 두번째 Data Download page 개선
