@@ -275,6 +275,8 @@ SEG|464|90
 
 + UI 개선 및 이미지 해상도 조절 등의 세부 조정 사항이 필요함.
 
+<img width="467" alt="image" src="https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/615ba59c-dfd3-48c5-89fe-74b90d0d3c18">
+<img width="311" alt="image" src="https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/698b6233-4b67-488c-9a47-524ad2399403">
 
 ## Next Week Goal
 + UI 개선
