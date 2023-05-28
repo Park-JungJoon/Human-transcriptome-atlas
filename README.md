@@ -303,3 +303,8 @@ SEG|464|90
 
 ## 15. SEG / MEG 
 + 다른 highlight의 대상으로, SEG/MEG에 따른 expression pattern을 대상으로 삼고자 함.
+
+
+
+## Next Week Goal
++ TS scoring funciton 확립, TS gene에 관련한 Highlight 연구
