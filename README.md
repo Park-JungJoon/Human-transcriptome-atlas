@@ -281,3 +281,25 @@ SEG|464|90
 ## Next Week Goal
 + UI 개선
 + 두번째 Data Download page 개선
+
+
+# PART D. Highlight
+## 14. Tissue Specific Gene from Non-major Tissue
++ 연구가 많이되지 않은 minor tissue에 대한 TS gene에 대한 종합적인 분석을 연구의 첫 번째 Highlight로 삼고자 합니다.
++ 먼저, 현 사용되고 있는 TS score에 대한 조사를 진행함. 
+
+![venn_result8525](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/51731c22-77f5-4157-85da-407d823559ba)
+
+  + [Human Protein Atlas](https://www.proteinatlas.org/)에서 조직 특이적인 10,987개의 유전자 전체에 대한 벤다이어그램
+  + Enriched는 모든 조직에 비해 5배 이상의 발현량을 갖는 경우, Group Enriched는 2-5개의 tissue가 5배 이상의 발현량을 갖는 경우, Enchanced는 2-5배의 발현량을 갖는 경우이다.
+  + 현재 TS cut (TS score 1 이상, 1개 이상의 DB에서 tissue specific gene일 경우)는 과도하게 strict함. 
+  + 이에 따라 Tau Value를 조정해 점수를 보완할 필요성이 있음.
++ 현재 데이터에서 TS 로 분류하나, Human Protein Atlas에서는 Specificity가 보고되지 않은 9개의 유전자에 대해 자세히 조사함. 
++ 크게 원인은 3가지로
+  + Expression level이 낮은 gene이라, 우리 데이터 셋에서 filtering 되지 않았으나, Human Protein Atlas에서는 filtering된 경우
+  + GTEx, TCGA에서 TS gene으로 분류된 경우, 사용된 DB가 다르기 때문에 다르게 지정된 경우
+  + Human Protein Atlas에 없는 gene일 경우가 있음.
++ Tau value, Decision Tree를 이용한 Scoring 기준을 보완한 후 TS gene finding을 진행하고자 함.
+
+## 15. SEG / MEG 
++ 다른 highlight의 대상으로, SEG/MEG에 따른 expression pattern을 대상으로 삼고자 함.
