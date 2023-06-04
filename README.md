@@ -304,7 +304,18 @@ SEG|464|90
 ## 15. SEG / MEG 
 + 다른 highlight의 대상으로, SEG/MEG에 따른 expression pattern을 대상으로 삼고자 함.
 
+## 16. Classifier Model Construction
++ 지난주 TS scoring function을 확보하여 highlight를 찾고자함. 
 
++ TS scoring funciton 확립, TS gene에 관련한 Highlight 연구에 classfier 모델의 determination gene을 포함시키고자함. 
++ Stackoverflow error가 남, 확인 결과 gene의 개수에 의해 메모리 소모가 많이 됨.
++ Gene 개수를 tau 상위 80퍼센트만 사용하는 방향으로 문제 해결.
++ LASSO model 구축.
+
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/6abcdcdc-065d-4be7-8dc5-223420a718a8)
+
++ Multinomial 문제로, performance evaluation 과정을 진행중에 있음. 
 
 ## Next Week Goal
-+ TS scoring funciton 확립, TS gene에 관련한 Highlight 연구
++ Linear Regression Model 및 다른 모델들 구축 및 비교 평가. 
++ 평가된 Gene들을 토대로 TS scoring function 개선, Tissue specicity expression 관련하여 highlight.
