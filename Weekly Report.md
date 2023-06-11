@@ -57,7 +57,7 @@ Sum|1,904|2,217|2,176|6,297
 #### Result
 + FC의 percentile과 Tau  두 값 모두, HPA의 Tissue enriched gene의 경우, Tissue specificity가 없는 그룹(Else)간의 차이가 명확함. 
 + FC percentile, Tau를 고려하여 TS scoring function을 재조정하고, 개수를 약 1,100개에서 3,000개 이상으로 재조정하고, HPA 이외의 DB와 비교할 예정임.
-
++ Parameter들을 적용해서 사용할 수 있는 새로운 gene profile을 코드와 함께 '/eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/ts_scoring_new'에 저장함. 이를 적용해 다음 주에 기준을 적용 / biomarker 발굴을 할 예정임.
 
 
 </br>
