@@ -98,7 +98,7 @@ Sum|1,904|2,217|2,176|6,297
 ![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/479fd2a4-e70d-4a8f-bb5f-991020a4bac5)
 
 + HPA에서 가장 높은 Tissue Specificity를 보이는 3,361개의 Tissue Enriched 데이터 set과, 앞선 2개의 데이터 set 벤다이어그램.
- - 389개의 gene에 대한 mannually gene annotation analysis를 진행함. 
+ - TS score > 2.5이며, 기존의 TS finding 기준에도 부합하는 389개의 gene에 대한 mannually gene annotation analysis를 진행함. 
  - ENSG00000125618와 같이 Thyroid Specific gene이며, 이전의 다른 Paper에서 그 기능과 tissue specificity가 보고된 유전자이나,  HPA에서 분류하지 못한 gene이 있음 (ENSG00000160781,ENSG00000176894)
  - 그러나, 아직도 Blood Brain과 같이 data set의 차이에 기인한 유전자들이 여집합이 대부분을 차지하고, TS score의 문제점을 파악함. 
 
