@@ -70,3 +70,86 @@ Sum|1,904|2,217|2,176|6,297
 
 
 # 23/06/18
+## Summarize of Last Report
++ Tau, Fold Change 등의 데이터 분포 시각적 확인
++ [Human Protein Atlas](https://www.proteinatlas.org/)의 데이터 셋을 비교군으로 삼고, DB 2개 이상에서 같은 Tissue Specific이라고 지정한 gene을 TS gene이라고 정함. 
++ 총 1,110개의 gene 중에, HPA에서 Tissue specificity를 가지지 않는 유전자라고 정의한 유전자는 총 9개임.
++ 9개 유전자에 대한 분석 결과, HPA에서 분석 대상으로 삼지 않는 Blood tissue이거나, 발현량이 너무 낮아 HPA에서 pre-filtering된 것으로 추정됨.
++ 기존의 TS score 기준이 너무 harsh해서, Tissue specity 관련 highlight를 찾기 어려워, TS scoring function의 재조정이 필요함. 
+
+## 1. TS score Definition 
+- Gene 마다 3개의 DB에서 Most expressed tissue가 다른 경우가 있고, 이 경우에 단순 Foldchange를 사용하는 경우, Tissue specificity가 왜곡되므로, Tissue distribution을 1개의 기준으로 삼음.
+  + 3개 DB에서 모두 같은 경우 1점, 2개 DB에서 모두 같은 경우 0.5점, 3개 DB에서 모두 다른 경우 0점을 사용함. 
+- Tau값을 사용함. Tau 의 경우, Tissue Specificity를 전반적으로 파악하는데 매우 유용하나, 특정 2개 tissue에서 매우 높은 발현량을 가지고, 나머지 Tissue에서 매우 낮은 발현량을 가질 때에도 높은 값을 가지기 때문에, 특정 1가지의 Tissue Specificity를 포함하는 정보를 제공할 수 없음.
+  + Mean Tau (3 DB)를 Score function으로 사용 
+- 이에 Foldchange Percentile을 사용함. (Raw foldchange를 사용했을 경우, Tau와 같은 weight으로 반영되지 않음.)
+  + Mean FC Percentile (3 DB)를 Score function으로 사용
+
+
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/c5bde3f9-09d2-4b7c-a9de-a209c3dae9a8)
+
++ TS score의 분포, 2.5 이상의 gene을 TS score 으로 분류하고, 1,521개의 분포를 보임. 지난 주 연구의 1,100개 보다 많은 양의 Gene을 detecting함. 
+
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/ddb565bb-43bb-41df-a782-14f817c5514f)
+
++ HPA(enriched , enhanced, group enriched 와, 기존의 standard (FC >4, Tau percentile > 0.75, Expression percentile > 0.2)를 한개의 DB에서라도 넘긴 gene set에 대한 벤다이어그램. 
+ - HPA에서 3단계로 나뉘는데, (Enriched > Group Enriched > Enhanced) 순이며, 너무 넓은 범위 (10,000개 이상을 TS gene으로 분류함)를 포함함. 
+
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/479fd2a4-e70d-4a8f-bb5f-991020a4bac5)
+
++ HPA에서 가장 높은 Tissue Specificity를 보이는 3,361개의 Tissue Enriched 데이터 set과, 앞선 2개의 데이터 set 벤다이어그램.
+ - 389개의 gene에 대한 mannually gene annotation analysis를 진행함. 
+ - ENSG00000125618와 같이 Thyroid Specific gene이며, 이전의 다른 Paper에서 그 기능과 tissue specificity가 보고된 유전자이나,  HPA에서 분류하지 못한 gene이 있음 (ENSG00000160781,ENSG00000176894)
+ - 그러나, 아직도 Blood Brain과 같이 data set의 차이에 기인한 유전자들이 여집합이 대부분을 차지하고, TS score의 문제점을 파악함. 
+
+## 2. TS score supplementary
++ 이전에 고안한 TS score에 대한 문제점
+ - 1. Expression Pre-filtering 이 충분히 이뤄지지 않음. 
+ - Expression이 낮은 gene의 경우, psuedo count (0.001)의 영향으로 fc가 200,000이 나오는 경우가 있음.
+ - 이런 경우, HPA, gencard, archs4 등의 선행연구에서도 tissue specific하지 않은 발현 패턴을 보이는데 TS 로 분류되는 경우가 빈번함. Noise로 판단함.
+ - Expression Level Pre-filtering 기준을 가장 높은 tissue의 평균 발현량이 1 (GeTMM)  이상으로 상향 조정하고, GEO, GTEx, TCGA 3 database 중 어느 하나의 DB에서라도 위 조건에 맞지 않으면 filtered함. 
+ - 2. FC Percentile은 분산을 반영하지 못함.
+ - 3. DB간 mean fold change에 차이가 있어, 단순 평균으로 계산할 경우 특정 DB의 발현 패턴이 TS scoring에 편향되어질 것으로 예상함. 
+ 
+ ![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/556e8bf7-7ed7-42b7-a416-6f6edc97fcb2)
+ 
+ - 위와 같이, GTEx의 평균 Foldchange가 높게 책정되어있음. 
+ - 2,3 번 문제점의 해결으로, fold change의 z-score를 만들어 scoring function에 사용하고자함. 
+ - 추가적으로, raw foldchange를 사용할 경우, 정규분포화에 어려움이 있어 Log FC를 사용함. 
+
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/78ed487b-ea4a-4cb1-9c0b-b2f232ac20d8)
+
++ 위와 같은 분포의 TS score를 얻음.
+
+Total Gene | 17,249
+-|-
+TS score > 1 | 3,643
+TS score > 1.5 | 1,996
+TS score > 2 | 1,077
+
++ 앞선  TS score가 5 이상인 15개의 gene 중 10개 gene에 대한 tissue-specific과 관련된 문헌은 아래와 같음.
+
+Ensembl Gene ID | Tissue | Paper
+-|-|-
+ENSG00000042832  | Tyroid | [Paper](https://link.springer.com/article/10.1007/s12022-018-9532-9)
+ENSG00000080910   | Liver | -
+ENSG00000117601    | Liver |[Paper](https://www.liebertpub.com/doi/full/10.1089/omi.2015.0088)
+ENSG00000055957    |Liver|[Paper](https://www.nature.com/articles/s41467-021-25546-y)
+ENSG00000167751 | Prostate | [Paper](https://www.degruyter.com/document/doi/10.1515/BC.2001.002/html)
+ENSG00000110243|Liver| Funtionally Tissue Specific
+ENSG00000134389   | Liver | Reported in nephropathy; *
+ENSG00000091583 | Liver | Funtionally Tissue Specific
+ENSG00000122304   |Testis|[Paper](https://www.jbc.org/article/S0021-9258(20)65481-3/abstract)
+
++ 위의 표와 같이, TS scoring function이 단순 TS-gene 분류 뿐만이 아니라, 연속적인 값으로서 매우 높은 값을 갖을 때, biomarker 발굴에 직접적으로 사용가능함을 시사함.
+
+## 3. TS score Problems
++ 3개의 database를 사용하며, 특정 db에만 존재하는 tissue들이 있음. 
++ 예를 들어, Muscle의 경우에 GTEx에만 존재하는데, 기본적인 Tissue distribution 계산값이 0으로, (나머지 두 DB에선 없으므로) TS scoring에서 매우 불리한 위치에 있음.
++ Expression이 3개 DB중 하나라도 1이 안되면 사용하지 않음. 약 2,000개 가량의 gene에 대한 추가적인 연구의 진행이 없음. 
+
+
+****** 
+지난 주 말씀하신 huge table directory 입니다. 연구 중 수정을 거듭해, 이번 주에 보고드립니다.
+All intersection protein gene :/eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/ts_scoring_new/ALL_INFOS_TABLE.tsv  
+Highly Expressing Gene : /eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/ts_scoring_new/ESSENTIAL_17000_INFOS.tsv,  /eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/ts_scoring_new/Z_scored_17000_ALL_INFOS.tsv
