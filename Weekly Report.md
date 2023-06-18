@@ -151,5 +151,8 @@ ENSG00000122304   |Testis|[Paper](https://www.jbc.org/article/S0021-9258(20)6548
 
 ****** 
 지난 주 말씀하신 huge table directory 입니다. 연구 중 수정을 거듭해, 이번 주에 보고드립니다.
+<br/>
+```
 All intersection protein gene :/eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/ts_scoring_new/ALL_INFOS_TABLE.tsv  
 Highly Expressing Gene : /eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/ts_scoring_new/ESSENTIAL_17000_INFOS.tsv,  /eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/ts_scoring_new/Z_scored_17000_ALL_INFOS.tsv
+```
