@@ -156,3 +156,10 @@ ENSG00000122304   |Testis|[Paper](https://www.jbc.org/article/S0021-9258(20)6548
 All intersection protein gene :/eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/ts_scoring_new/ALL_INFOS_TABLE.tsv  
 Highly Expressing Gene : /eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/ts_scoring_new/ESSENTIAL_17000_INFOS.tsv,  /eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/ts_scoring_new/Z_scored_17000_ALL_INFOS.tsv
 ```
+
+
+Gene| GEO | GTEX | TCGA | Alpha
+-|-|-|-|-
+Gene A | Liver | Liver | Liver | 1
+Gene B | Brain | Blood | Blood | 0.5
+Gene C | Thymus | Adipose Tissue | Spleen | 0
