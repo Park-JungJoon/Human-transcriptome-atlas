@@ -163,3 +163,13 @@ Gene| GEO | GTEX | TCGA | Alpha
 Gene A | Liver | Liver | Liver | 1
 Gene B | Brain | Blood | Blood | 0.5
 Gene C | Thymus | Adipose Tissue | Spleen | 0
+
+
+Tissue | Count
+-|-
+Blood | 58
+Liver | 14
+Thyroid | 11
+Testis | 8
+9 other tissues | 16
+
