@@ -131,15 +131,14 @@ TS score > 2 | 1,077
 
 Ensembl Gene ID | Tissue | Paper
 -|-|-
-ENSG00000042832  | Tyroid | [Paper](https://link.springer.com/article/10.1007/s12022-018-9532-9)
-ENSG00000080910   | Liver | -
-ENSG00000117601    | Liver |[Paper](https://www.liebertpub.com/doi/full/10.1089/omi.2015.0088)
-ENSG00000055957    |Liver|[Paper](https://www.nature.com/articles/s41467-021-25546-y)
-ENSG00000167751 | Prostate | [Paper](https://www.degruyter.com/document/doi/10.1515/BC.2001.002/html)
-ENSG00000110243|Liver| Funtionally Tissue Specific
-ENSG00000134389   | Liver | Reported in nephropathy; *
-ENSG00000091583 | Liver | Funtionally Tissue Specific
-ENSG00000122304   |Testis|[Paper](https://www.jbc.org/article/S0021-9258(20)65481-3/abstract)
+[ENSG00000042832](https://www.genecards.org/cgi-bin/carddisp.pl?gene=TG&keywords=ENSG00000042832)  | Tyroid | [Paper](https://link.springer.com/article/10.1007/s12022-018-9532-9)
+[ENSG00000117601](https://www.genecards.org/cgi-bin/carddisp.pl?gene=SERPINC1&keywords=ENSG00000117601)    | Liver |[Paper](https://www.liebertpub.com/doi/full/10.1089/omi.2015.0088)
+[ENSG00000055957](https://www.genecards.org/cgi-bin/carddisp.pl?gene=ITIH1&keywords=ENSG00000055957)    |Liver|[Paper](https://www.nature.com/articles/s41467-021-25546-y)
+[ENSG00000167751](https://www.genecards.org/cgi-bin/carddisp.pl?gene=KLK2&keywords=ENSG00000167751) | Prostate | [Paper](https://www.degruyter.com/document/doi/10.1515/BC.2001.002/html)
+[ENSG00000110243](https://www.genecards.org/cgi-bin/carddisp.pl?gene=APOA5&keywords=ENSG00000110243)|Liver| Funtionally Tissue Specific
+[ENSG00000134389](https://www.genecards.org/cgi-bin/carddisp.pl?gene=CFHR5&keywords=ENSG00000134389)   | Liver | Reported in nephropathy; *
+[ENSG00000091583](https://www.genecards.org/cgi-bin/carddisp.pl?gene=APOH&keywords=ENSG00000091583) | Liver | Funtionally Tissue Specific
+[ENSG00000122304](https://www.genecards.org/cgi-bin/carddisp.pl?gene=PRM2&keywords=ENSG00000122304)   |Testis|[Paper](https://www.jbc.org/article/S0021-9258(20)65481-3/abstract)
 
 + 위의 표와 같이, TS scoring function이 단순 TS-gene 분류 뿐만이 아니라, 연속적인 값으로서 매우 높은 값을 갖을 때, biomarker 발굴에 직접적으로 사용가능함을 시사함.
 
@@ -150,26 +149,13 @@ ENSG00000122304   |Testis|[Paper](https://www.jbc.org/article/S0021-9258(20)6548
 
 
 ****** 
-지난 주 말씀하신 huge table directory 입니다. 연구 중 수정을 거듭해, 이번 주에 보고드립니다.
+연구 중 사용된 raw 및 merged table 디렉토리입니다.
 <br/>
 ```
-All intersection protein gene :/eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/ts_scoring_new/ALL_INFOS_TABLE.tsv  
-Highly Expressing Gene : /eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/ts_scoring_new/ESSENTIAL_17000_INFOS.tsv,  /eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/ts_scoring_new/Z_scored_17000_ALL_INFOS.tsv
-```
+/eevee/val/jjpark/atlas_report/final : 현재 연구의 최종 결과본으로, 해당 디렉토리 내 README.txt에 column 설명을 했습니다.
+/eevee/val/jjpark/atlas_report/normalized : raw gene count table을 normalized한 결과입니다.
+/eevee/val/jjpark/atlas_report/raw : raw gene count table(read)입니다.
+/eevee/val/jjpark/atlas_report/RENEWAL_META_MAJOR_TISSUE.tsv :  메타데이터입니다.
 
-
-Gene| GEO | GTEX | TCGA | Alpha
--|-|-|-|-
-Gene A | Liver | Liver | Liver | 1
-Gene B | Brain | Blood | Blood | 0.5
-Gene C | Thymus | Adipose Tissue | Spleen | 0
-
-
-Tissue | Count
--|-
-Blood | 58
-Liver | 14
-Thyroid | 11
-Testis | 8
-9 other tissues | 16
+``
 
