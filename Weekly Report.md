@@ -67,8 +67,6 @@ Sum|1,904|2,217|2,176|6,297
 
 ****
 
-
-<a id="my-anchor"></a>
 # 23/06/18
 ## Summarize of Last Report
 + Tau, Fold Change 등의 데이터 분포 시각적 확인
@@ -156,6 +154,79 @@ Ensembl Gene ID | Tissue | Paper
 /eevee/val/jjpark/atlas_report/normalized : raw gene count table을 normalized한 결과입니다.
 /eevee/val/jjpark/atlas_report/raw : raw gene count table(read)입니다.
 /eevee/val/jjpark/atlas_report/RENEWAL_META_MAJOR_TISSUE.tsv :  메타데이터입니다.
+```
 
-``
+<a id="my-anchor"></a>
+# 23/07/02
+## Summarize of Last Report
++ TS score을 통해 연속적인 tissue-specificity 파악 및 분포, 검증
+## This week goal
++ Multi Nomial Classifier in python
 
+## 1. Using Dataset
+
++ Normalization method가 다를 경우, 학습된 데이터와 다르게 판별함.
++ 현재 사용하는 normalization method([GeTMM](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2246-7))을 사용할 경우, Input data를 raw로 받을 때, 계산량이 너무 많음.
++ Library size로만 보정한 CPM 을 normalization method로 사용함.
++ 3개 DB의 Gene count matrix를 CPM으로 새로 보정함.
+
+## 2. Classifier Model Selection
++ Classifier로 적합한 Model을 선정함에 있어 주요하게 생각한 기능.
+ - Multinomial classification의 코딩이 python 환경에서 자유로울 것. (Web DB 공개가 Shiny for python으로 진행되기 때문.)
+ - Multithread 기능을 자유롭게 사용할 수 있을 것.
+ - Predicted class를 차등적으로 predicted probability와 함께 제공가능할 것.
+ - 계산 시간이 느리지 않을 것.
+ - Determining gene (feature)의 확인이 가능할 것. 
++ 위의 기준에 적함한 sklearn의 Randomforest를 사용함.
+
+## 3. Hyperparameter Optimization
++ Input 데이터로는 3개 DB의 Gene expression matrix(CPM normalized)를 사용하고, 첫 column은 tissue임.
++ TS 연구에 사용된 17,231개의 Gene (used as X), 30개의 tissue (used as Y)로 나뉘어진 46831개의 sample로 구성되어 있음.
++ test size 0.4, train size 0.6으로 진행함.
++ Optimization에 활용된 코드는 아래와 같음.
+
+```
+from sklearn.model_selection import GridSearchCV
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+import multiprocessing
+import time
+start = time.time()
+df = pd.read_csv('MERGED_cpm_gene_count_table.tsv',sep = '\t')
+print("Reading : ", time.time() - start)
+X = df.iloc[:, 1:]  # Exclude the first column (assumed to be the "Gene" column)
+y = df.iloc[:, 0]   # Select the first column as the target variable
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)
+# Set the number of threads to use
+num_threads = 28
+n_jobs = multiprocessing.cpu_count() if num_threads == -1 else num_threads
+# Optimize the number of trees
+params = { 'n_estimators' : [i for i in range(10,101,10)],
+           'max_depth' : [i for i in range(2,11,2)],
+           'min_samples_leaf' : [i for i in range(2,19, 6)],
+           'min_samples_split' : [i for i in range(4,25,4)]
+            }
+rf_clf = RandomForestClassifier(random_state = 0, n_jobs = 6)
+grid_cv = GridSearchCV(rf_clf, param_grid = params, cv = 3, n_jobs = 4)
+grid_cv.fit(X_train, y_train)
+print('최적 하이퍼 파라미터: ', grid_cv.best_params_)
+print('최고 예측 정확도: {:.4f}'.format(grid_cv.best_score_))
+print("Finishing : ", time.time() - start)
+```
+
++ n_estimator 은 10 - 100을 10간격으로 10개, max_depth는 2-10을 2 간격으로 5개, min_samples_leaf는 2-18을 6간격으로 3개, min_samples_split은 4-24를 4 간격으로 6개 확인함.
++ 최적화된 Parameter는 아래와 같음.
++ 'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 12, 'n_estimators': 80
++ 위 Parameter로 accuracy는 0.9382 임.
++ 위 코드를 실행하는데 15,473초 (4시간 30분) 가량 소요됨. (eevee, thread 28)
++ Optimized option으로 model 구축을 했을 때, 19분 소요됨.
++ 위 Option으로 구축한 model은 pkl으로 "/eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/tissue_classifier/0702_random_forest_model.pkl" 에 저장함.
++ Paramter중 max_depth는 지정한 범위의 최대, min_samples_leaf는 최소로, 최적화를 위해 parameter를 변경하여 다시 작업하는 과정 중에 있음.
++ 추후 연구에 모델을 저장하고, input으로 raw gene matrix를 받을 때, normalization과 함께 tissue predictor를 제공하는 기능을 자동화하여 web에서 구현하고자 합니다.
+
+# Nest Week Goal
++ Web DB construction
++ 논문 작성 (Introduction, Method)
