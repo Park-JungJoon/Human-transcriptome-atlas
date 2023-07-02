@@ -224,7 +224,7 @@ print("Finishing : ", time.time() - start)
 + 위 코드를 실행하는데 15,473초 (4시간 30분) 가량 소요됨. (eevee, thread 28)
 + Optimized option으로 model 구축을 했을 때, 19분 소요됨.
 + 위 Option으로 구축한 model은 pkl으로 "/eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/tissue_classifier/0702_random_forest_model.pkl" 에 저장함.
-+ Paramter중 max_depth는 지정한 범위의 최대, min_samples_leaf는 최소로, 최적화를 위해 parameter를 변경하여 다시 작업하는 과정 중에 있음.
++ Paramter중 max_depth는 지정한 범위의 최대, min_samples_leaf는 최소이지만 default로, 최적화를 위해 depth를 변경하여 다시 작업하는 과정 중에 있음.
 + 추후 연구에 모델을 저장하고, input으로 raw gene matrix를 받을 때, normalization과 함께 tissue predictor를 제공하는 기능을 자동화하여 web에서 구현하고자 합니다.
 
 # Nest Week Goal
