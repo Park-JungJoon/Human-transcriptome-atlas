@@ -264,7 +264,9 @@ print("Finishing : ", time.time() - start)
 + 웹앱의 구성은 Home,Gene info page, data download page, tissue classifier page로 나누고자함.
 + 가장 중요한 기능인 Gene info Page를 구축함.
 
-<img width="1151" alt="image" src="https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/444e9029-5e76-46e6-ad16-8e5d7790c242">
+<img width="888" alt="image" src="https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/c98c2d0f-868f-4d91-bd5c-2d4c436ff7ea">
+
+
 
 + 위의 사진과 같은 형태로, 기능만을 구현한 Gene info page의 구축을 완료함. 이후 추가적인 UI 개선 및 디테일 보정이 필요함. 
 
