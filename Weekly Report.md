@@ -156,7 +156,6 @@ Ensembl Gene ID | Tissue | Paper
 /eevee/val/jjpark/atlas_report/RENEWAL_META_MAJOR_TISSUE.tsv :  메타데이터입니다.
 ```
 
-<a id="my-anchor"></a>
 # 23/07/02
 ## Summarize of Last Report
 + TS score을 통해 연속적인 tissue-specificity 파악 및 분포, 검증
@@ -230,3 +229,43 @@ print("Finishing : ", time.time() - start)
 # Nest Week Goal
 + Web DB construction
 + 논문 작성 (Introduction, Method)
+
+
+<a id="my-anchor"></a>
+# 23/07/15
+## Summarize of Last Report
++ Tissue Classifier, paper draft.
+
+## This week goal
++ Re-working HKG
++ Re-working Gene Info Page (Web App)
+
+## Re-working HKG
++ 기존의 HKG에서 사용한 method는 Coefficient Variants 하위 50%, Expression Percentile 상위 33%인 gene을 각 DB 별로 조사함. 이후에 3 DB에서 모두 존재하는 gene을 HKG로서 정의함
++ 위의 기준이 과학적이고, 별도의 기준이 없어, TS scoring에서 사용된 GeTMM 1이상의 gene을 사용하고자함.
+
+### 1. CV distribution
+
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/cfd76ef9-72d3-4360-a0e3-d1c062b2a5c3)
+
++ CV distribution. Peak 값은 0.23 - 0.3의 값을 갖고 있다. Peak 이하의 값을 갖는 유전자를 HKG 로 정의하고자함.
++ 각 DB 마다 peak 이하로 정의 할 경우에, DB bias가 생기기 때문에, 모든 DB의 CV 하위 25%로 상정함. 
++ Expression level pre-filtering은 TS scoring에 사용된 gene과 마찬가지로, 17,150개의 유전자를 사용함.
++ 3 DB에서 모두 HKG로 정의했을 때, 그 값을 consensus HKG로서 지정함.
+
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/6eca90ea-daaf-4085-85fa-4a0a7e1584c3)
+
++ 변경된 HKG와 기존 연구에 대한 비교.
+
+* 변경된 HKG 정보를 포함한 데이터는 "/eevee/val/jjpark/atlas_report/HKGs_25percentile.txt"에 저장했습니다.
+
+### 2.  Re-working Gene Info Page 
++ 새로운 Tissue-specific data와, HKG 연구로 인해, 다시 web app을 구축함.
++ 웹앱의 구성은 Home,Gene info page, data download page, tissue classifier page로 나누고자함.
++ 가장 중요한 기능인 Gene info Page를 구축함.
+
+<img width="1151" alt="image" src="https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/444e9029-5e76-46e6-ad16-8e5d7790c242">
+
++ 위의 사진과 같은 형태로, 기능만을 구현한 Gene info page의 구축을 완료함. 이후 추가적인 UI 개선 및 디테일 보정이 필요함. 
+
+* "http://leafeon.korea.ac.kr:8001/" 주말동안 위의 링크에서 웹앱 구동하고 있습니다.
