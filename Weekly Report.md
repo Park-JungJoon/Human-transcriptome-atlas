@@ -231,7 +231,6 @@ print("Finishing : ", time.time() - start)
 + 논문 작성 (Introduction, Method)
 
 
-<a id="my-anchor"></a>
 # 23/07/15
 ## Summarize of Last Report
 + Tissue Classifier, paper draft.
@@ -271,3 +270,41 @@ print("Finishing : ", time.time() - start)
 + 위의 사진과 같은 형태로, 기능만을 구현한 Gene info page의 구축을 완료함. 이후 추가적인 UI 개선 및 디테일 보정이 필요함. 
 
 * "http://leafeon.korea.ac.kr:8001/" 주말동안 위의 링크에서 웹앱 구동하고 있습니다.
+
+<a id="my-anchor"></a>
+# 23/07/15
+## Summarize of Last Report
++ HKG reworking, Web app construction.
+
+## This week goal
++ Constitive Expression Gene
++ Up/Down Regulated gene
++ Re-working TS score
+
+### 1. Constitive Expression Gene
++ Constitive Expression Gene을 파악하기 위한 기준은 아래와 같음.
+ - DB별 Sample내의 상위 75% 발현을 보이는 Gene은 1로, 그렇지 못하는 Gene은 0으로 표기함.
+ - DB별 Gene의 binary table을 합산하여, Gene의 consititive expression score을 나타내고, Z-score 보정을 통해, 각 DB의 weight를 일괄적으로 조정함. 
+
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/0f7e50fa-0d33-41bf-988d-7a6d2b017abc)
++ Consititive Score
+
++ Constitive Score 2 이상의 expression level percentile은 95.94%. (DB당 expression read count sum의 percentile 평균)
++ Constitive Score 1 이상의 expression level percentile은 81.45%
++ Constitive Score 0 이상의 expression level percentile은 62.51%
+
+### 2. Up / Down Regulated Gene
++ 앞선 Tissue-specific gene은 배타적으로 specific하게 high-expression되는 gene만을 규정하며, down-regulated 되는 gene에 대한 연구는 진행되지 않음.
++ 포괄적이고, less harsh한 기준으로 Up/Down regulated gene을 정의함.
++ 기준은 해당 tissue의 발현량이 평균 발현량의 5배 이상/이하를 up/down regulated gene으로서 정의함.
++ 위의 기준에 따라, 여러개의 tissue에서 up-regulated 되는경우와, down regulated gene의 경우 기존의 TS와 다른 분석을 제시 가능함.
++ '/eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/h_constitive/ALL_GENE_INFOS.json'에 TS, HKG, Consititive, Up/Down Regulated gene에 대한 정보를 개제함.
+
+### 3. TS score re-working
++ 기존의 모든 DB에 존재하지 않는 tissue의 경우 분석에 noise가 생기는 문제가 있었음.
++ Most-expressed tissue의 Z-tau, Z-LogFC를 계산한 새로운 Gene TS Score를 계산하고, Consensus를 별도로 표시할 예정임.
++ 본 연구에서 지정하는 Tissue-specific gene은 조직을 보유하고 있는 모든 조직에서 가장 높은 발현량을 갖는 유전자만 TS gene으로 규정함.
++ '/eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/ts_scoring_new/0722_new/new_score.tsv'에 새로 계산된 TS score가 있음.
+
+## Next week goal.
++ 금주로서 계획한 모든 gene centric 연구가 완료됨에 따라, web app construction을 빠른 시일 내에 해결하고자 합니다. 
