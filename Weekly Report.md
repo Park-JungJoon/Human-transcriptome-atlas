@@ -271,7 +271,7 @@ print("Finishing : ", time.time() - start)
 
 * "http://leafeon.korea.ac.kr:8001/" 주말동안 위의 링크에서 웹앱 구동하고 있습니다.
 
-<a id="my-anchor"></a>
+
 # 23/07/23
 ## Summarize of Last Report
 + HKG reworking, Web app construction.
@@ -308,3 +308,16 @@ print("Finishing : ", time.time() - start)
 
 ## Next week goal.
 + 금주로서 계획한 모든 gene centric 연구가 완료됨에 따라, web app construction을 빠른 시일 내에 해결하고자 합니다. 
+
+<a id="my-anchor"></a>
+# 23/10/02
+## 1. Constitutive score revise
+
++ Constitutive Expression Gene의 파악을 위한 기준은 아래와 같음.
+   - DB 별 1개 sample 내의 상위 25%, 50%, 75% 각 criteria로 binary 파일을 만듦 (GEO 1st quantile binary, GEO 2nd quantile binary, GEO 3rd quantile binary; GTEx, TCGA 동일)
+   - 만들어진 binary 파일 (criteria up or down으로 분류하여 1,0으로 표기함.)을 합한뒤, z-score normalization을 진행하고 한 gene당 총 9개 normalized expression값(3개 DB * 3개 critera)의 평균을 constitutive score으로 정의함.
+
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/e57ee613-e007-4be2-8389-a3b80653db82)
+
++ 3rd quantile을 사용해서 만든 constitutive score plot
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/08c698fe-ed45-4e24-b305-27f42a0089e3)
