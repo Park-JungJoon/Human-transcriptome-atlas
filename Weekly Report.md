@@ -321,3 +321,5 @@ print("Finishing : ", time.time() - start)
 
 + 3rd quantile을 사용해서 만든 constitutive score plot
 ![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/08c698fe-ed45-4e24-b305-27f42a0089e3)
+
+파일 계산 코드 및 결과물 : /eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/h_constitive/subs
