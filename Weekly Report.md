@@ -309,7 +309,6 @@ print("Finishing : ", time.time() - start)
 ## Next week goal.
 + 금주로서 계획한 모든 gene centric 연구가 완료됨에 따라, web app construction을 빠른 시일 내에 해결하고자 합니다. 
 
-<a id="my-anchor"></a>
 # 23/10/02
 ## 1. Constitutive score revise
 
@@ -323,3 +322,70 @@ print("Finishing : ", time.time() - start)
 ![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/08c698fe-ed45-4e24-b305-27f42a0089e3)
 
 파일 계산 코드 및 결과물 : /eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/h_constitive/subs
+
+<a id="my-anchor"></a>
+# 23/10/15
+## House keeping gene functional analysis.
++ House keeping gene 2,420개를 대상으로 [Panter](https://www.pantherdb.org/) 데이터 베이스에서 gene function annotation을 다운로드 받고, 기능별로 HKG function marking을 진행함.
++ Panter는 13,687개의 human protein coding gene에 대하여 24개의 class로 분류함.
++ HKG 2,420개는 1,582개 유전자에 대한 function annotation이 이뤄졌으며, 24개 class 중 22개의 class로 나뉜다.
+
+
+HKG Function | Count
+-|-
+RNA_metabolism_ptn|291
+gene_specific_transcriptional_regulator|249     
+protein_modifying_enzyme|216
+metabolite_interconversion_enzyme|148
+membrane_traffic_protein|94
+protein_binding_activity_modulator|86
+chromatin_chromatin_binding_regulatory_ptn|81
+transporter|78
+translational_ptn|77
+scaffold_adaptor_ptn|75
+DNA_metabolism_ptn|67
+cytoskeletal_ptn|45
+chaperone|38
+transmembrane_signal_receptor|7
+structural_ptn|5       
+transfer_carrier_ptn|5
+viral_transposable_element_ptn|5   
+extracellular_matrix_ptn|4
+calcium-binding_ptn|3
+cell_junction_protein|2
+defense_immunity_ptn|3
+intercellular_signal_molecule|3
+
+Panter Function | Count
+-|-
+metabolite_interconversion_enzyme|1930
+protein_modifying_enzyme|1615
+gene_specific_transcriptional_regulator|1504    
+transmembrane_signal_receptor|1138
+transporter|1029
+RNA_metabolism_ptn|819
+protein_binding_activity_modulator|785
+scaffold_adaptor_ptn|742
+cytoskeletal_ptn|620
+defense_immunity_ptn|611
+membrane_traffic_protein|430
+intercellular_signal_molecule|397
+chromatin_chromatin_binding_regulatory_ptn|337
+translational_ptn|332
+cell_adhesion_molecule|325     
+DNA_metabolism_ptn|225
+chaperone|216
+extracellular_matrix_ptn|142
+transfer_carrier_ptn|136
+structural_ptn|136    
+calcium-binding_ptn|114
+cell_junction_protein|60
+viral_transposable_element_ptn|36 
+storage_ptn|8 
+
++ Top 10 Function of HKG, Panther overview.
+
+  ![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/83c6a82f-147a-40f3-9cc4-f593e6b08558)
+  ![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/6b674d00-fea7-4274-9b29-dceaf43b7651)
+
++ House keeping gene의 function 구성 비율이 panther가 기본 제공하는 비율과 상이하며, 특히 RNA-metabolism 관련된 유전자들의 구성이 많은 만큼, 생존에 필수적인 유전자의 구성이 많고, immunity와 같은 특이적인 유전적 형질을 요하는 function은 줄었다. 
