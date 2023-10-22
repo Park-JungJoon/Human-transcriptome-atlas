@@ -323,7 +323,7 @@ print("Finishing : ", time.time() - start)
 
 파일 계산 코드 및 결과물 : /eevee/val/jjpark/PAPER_RNA_SEQ_ATLAS/h_constitive/subs
 
-<a id="my-anchor"></a>
+
 # 23/10/15
 ## House keeping gene functional analysis.
 + House keeping gene 2,420개를 대상으로 [Panter](https://www.pantherdb.org/) 데이터 베이스에서 gene function annotation을 다운로드 받고, 기능별로 HKG function marking을 진행함.
@@ -389,3 +389,29 @@ storage_ptn|8
   ![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/6b674d00-fea7-4274-9b29-dceaf43b7651)
 
 + House keeping gene의 function 구성 비율이 panther가 기본 제공하는 비율과 상이하며, 특히 RNA-metabolism 관련된 유전자들의 구성이 많은 만큼, 생존에 필수적인 유전자의 구성이 많고, immunity와 같은 특이적인 유전적 형질을 요하는 function은 줄었다. 
+
+
+
+<a id="my-anchor"></a>
+# TS score criteria 
+
++ [HPA](https://www.proteinatlas.org/)에서 tissue enriched (FC >4, Expression level pre-filtered) 3,106개 gene을 대상으로 TS score 5%,10%,15%,20%,25%,30% geneset을 만들어 confusion matrix를 통해 가장 신뢰도 높은 TS score criteria를 설정함.
+
+Percentile|	Accuracy|	Precision|	Recall|	F1-Score
+-|-|-|-|-
+0.95	|0.8989|	0.2964|	0.7427|	0.4238
+0.9	|0.891768115942029	|0.4671|	0.5855|	0.5196
+0.85|	0.8750	|0.5999|	0.5011	|0.5461
+0.8|0.84669|	0.6859|	0.42984|	0.5285
+0.75|	0.8130	|0.7516	|0.376744	|0.5019
+0.7|	0.77733	|0.80853|	0.33778|	0.4764
+
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/c2726774-ba5f-45bf-8f2d-d1455fc43d76)
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/e17e43e5-4a71-4d3e-972f-c413dcf5c9f1)
+
++ 가장 F1 score가 높은 15%의 1.286218 TS score를 Tissue specific gene criteria 으로 지정함.
+
+# Environmental metarial DEG analysis
++ 한국 환경부 위해성평가 실시 등의 대상이 되는 환경유해인자의 종류 및 유해성 목록 고시 [자료](https://www.me.go.kr/home/web/public_info/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10123&orgCd=&condition.publicInfoMasterId=7&condition.deleteYn=N&publicInfoId=1167&menuId=10123)에 등재된 263개의 environmental toxicity metrials 중 CAS 번호가 있는 물질에 대해 분석을 진행하고자함. 
++ GEO 의 rnaseq-count 옵션을 통해서 NCBI측에서 일괄적으로 align한 table을 분석대상으로 이용하고자함. Toy dataset download / distribution 파악 중에 있음. 
+
