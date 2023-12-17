@@ -391,8 +391,6 @@ storage_ptn|8
 + House keeping gene의 function 구성 비율이 panther가 기본 제공하는 비율과 상이하며, 특히 RNA-metabolism 관련된 유전자들의 구성이 많은 만큼, 생존에 필수적인 유전자의 구성이 많고, immunity와 같은 특이적인 유전적 형질을 요하는 function은 줄었다. 
 
 
-
-<a id="my-anchor"></a>
 # TS score criteria 
 
 + [HPA](https://www.proteinatlas.org/)에서 tissue enriched (FC >4, Expression level pre-filtered) 3,106개 gene을 대상으로 TS score 5%,10%,15%,20%,25%,30% geneset을 만들어 confusion matrix를 통해 가장 신뢰도 높은 TS score criteria를 설정함.
@@ -415,3 +413,23 @@ Percentile|	Accuracy|	Precision|	Recall|	F1-Score
 + 한국 환경부 위해성평가 실시 등의 대상이 되는 환경유해인자의 종류 및 유해성 목록 고시 [자료](https://www.me.go.kr/home/web/public_info/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10123&orgCd=&condition.publicInfoMasterId=7&condition.deleteYn=N&publicInfoId=1167&menuId=10123)에 등재된 263개의 environmental toxicity metrials 중 CAS 번호가 있는 물질에 대해 분석을 진행하고자함. 
 + GEO 의 rnaseq-count 옵션을 통해서 NCBI측에서 일괄적으로 align한 table을 분석대상으로 이용하고자함. Toy dataset download / distribution 파악 중에 있음. 
 
+<a id="my-anchor"></a>
+# 1217 weekly report 
+## This week goal
++ T-score validation
++ 배준식 학생 연구 도움
++ coding work
+
+## T-score validation
++ TS score (T-score) 개선을 위해 기존에 공개된 [TigerDB](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-271)와 비교 분석을 목적으로 함.
++ 2008년에 공개된 논문으로 gene annotation version, 제공하는 tissue의 차이에 따라 HUPTA에 존재하는 tissue와 일치하는 gene annotation version이 같은 1,960개의 gene으로 거름.
++ 1,960개의 gene 중 520개의 gene만이 HUPTA와 intersection함.
++ HUPTA의 T-score (85%) 이상의 gene과 공통된 데이터 셋이 다른 이유는 10년 이상의 gene annotation version 차이와 사용하는 tissue가 다르기 때문일 것으로 추정됨.
++ 데이터의 차이가 상이하여 연구 및 논문에 기재하기 어려움.
++ 다음 주 연구로 HUPTA와 HPA의 다른 연구를 Enrichment 분석으로 validation part를 검증하고자함.
+
+## 배준식 학생 연구 도움
++ 같은 종의 소똥구리의 gut-microbiome의 조성을 k-mean clustering을 통해 labeling하는 과정 중에 있음.
+
+## Coding work
++ 지난 연구 토의에서 지적하신 web DB coding work;  consititutive score, 누락된 정보 기입, download data 등의 coding work 마무리함. 
