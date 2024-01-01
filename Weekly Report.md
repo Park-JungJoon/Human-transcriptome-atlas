@@ -413,7 +413,6 @@ Percentile|	Accuracy|	Precision|	Recall|	F1-Score
 + 한국 환경부 위해성평가 실시 등의 대상이 되는 환경유해인자의 종류 및 유해성 목록 고시 [자료](https://www.me.go.kr/home/web/public_info/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10123&orgCd=&condition.publicInfoMasterId=7&condition.deleteYn=N&publicInfoId=1167&menuId=10123)에 등재된 263개의 environmental toxicity metrials 중 CAS 번호가 있는 물질에 대해 분석을 진행하고자함. 
 + GEO 의 rnaseq-count 옵션을 통해서 NCBI측에서 일괄적으로 align한 table을 분석대상으로 이용하고자함. Toy dataset download / distribution 파악 중에 있음. 
 
-<a id="my-anchor"></a>
 # 1217 weekly report 
 ## This week goal
 + T-score validation
@@ -433,3 +432,19 @@ Percentile|	Accuracy|	Precision|	Recall|	F1-Score
 
 ## Coding work
 + 지난 연구 토의에서 지적하신 web DB coding work;  consititutive score, 누락된 정보 기입, download data 등의 coding work 마무리함. 
+
+<a id="my-anchor"></a>
+# 0101 Weekly Report
++ T-score 5% 대상으로 HPA와 비교
++ 배준식 학생 연구 도움
+
+## T-score 1% 대상으로 HPA와 비교
++ 5%의 T-score를 갖는 gene 863개 대상으로 HPA와 비교하여 HUPTA에서만 TS 로 지정되는 222개의 gene을 분석 중에 있습니다.
++ Gene 별로 manually searching을 하고 있어 시간이 오래 걸리고 있습니다.
+
+## 배준식 학생 연구 도움
++ "/panpyro/alfa/jjpark/jsbae" 디렉토리에 배준식 학생 연구 관련 작업물이 저장되어있습니다.
++ Clustering은 구성되는 OTU를 기반으로 Hierarchical Clustering을 진행했고, 4종의 소똥구리에 대해 구성하는 genus level / family level / OTU level 로 각각 진행했습니다.
++ Clustering 결과를 desert / grass land로 놓고 봤을 때, OTU level은 genus level과 비슷하게 분류되고, family level보다 genus level이 나은 것 같아, genus level로 소똥구리 4종에 대한 clustering 을 진행했습니다.
++ 클러스터링 된 샘플들을 labeling 하고, 먼저 bodilus 종에 대한 random forest 분류를 진행했습니다. parameter는 환경 변수, y값은 cluster label입니다. 
++ accuracy가 51%으로 모델 성능이 매우 좋지 못해 다른 종 / 다른 기법 등 다른 방법을 찾고 있습니다. 
