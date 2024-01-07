@@ -433,7 +433,6 @@ Percentile|	Accuracy|	Precision|	Recall|	F1-Score
 ## Coding work
 + 지난 연구 토의에서 지적하신 web DB coding work;  consititutive score, 누락된 정보 기입, download data 등의 coding work 마무리함. 
 
-<a id="my-anchor"></a>
 # 0101 Weekly Report
 + T-score 5% 대상으로 HPA와 비교
 + 배준식 학생 연구 도움
@@ -442,9 +441,22 @@ Percentile|	Accuracy|	Precision|	Recall|	F1-Score
 + 5%의 T-score를 갖는 gene 863개 대상으로 HPA와 비교하여 HUPTA에서만 TS 로 지정되는 222개의 gene을 분석 중에 있습니다.
 + Gene 별로 manually searching을 하고 있어 시간이 오래 걸리고 있습니다.
 
+
 ## 배준식 학생 연구 도움
 + "/panpyro/alfa/jjpark/jsbae" 디렉토리에 배준식 학생 연구 관련 작업물이 저장되어있습니다.
 + Clustering은 구성되는 OTU를 기반으로 Hierarchical Clustering을 진행했고, 4종의 소똥구리에 대해 구성하는 genus level / family level / OTU level 로 각각 진행했습니다.
 + Clustering 결과를 desert / grass land로 놓고 봤을 때, OTU level은 genus level과 비슷하게 분류되고, family level보다 genus level이 나은 것 같아, genus level로 소똥구리 4종에 대한 clustering 을 진행했습니다.
 + 클러스터링 된 샘플들을 labeling 하고, 먼저 bodilus 종에 대한 random forest 분류를 진행했습니다. parameter는 환경 변수, y값은 cluster label입니다. 
 + accuracy가 51%으로 모델 성능이 매우 좋지 못해 다른 종 / 다른 기법 등 다른 방법을 찾고 있습니다. 
+
+<a id="my-anchor"></a>
+# 0108 Weekly Report
++ 배준식 학생 연구 도움; random forest, lasso등 환경변수로 microbiome component가 바뀌는 연구 중에 있음.
+
+## 배준식 학생 연구 도움
++ hierical clustering에 관한 parameter 조정등을 완료했습니다. Grassland/Desert로 크게 나눴을 때 분류를 잘 하는 모델로 선정했습니다.
++ 클러스터링 된 샘플을 labeling 하고 gymnopleurus 종에 대한 random forest, lasso 모델 구축을 했습니다.
++ accuracy가 random forest의 경우 1이고, lasso의 경우 0.82입니다.
++ Metadata가 너무 단조로워 분류가 정확하지 않아 김보근 조교와 토의 후에 보완하도록 하겠습니다.
++ 현재 구축된 모델로는 기온이 microbiome composition에 가장 큰 영향을 끼치는 것으로 확인했습니다.
++ 관련된 연구 과정 및 코드는 "/eevee/val/jjpark/jsbae/models" 디렉토리에 있습니다. 
