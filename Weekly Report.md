@@ -449,7 +449,6 @@ Percentile|	Accuracy|	Precision|	Recall|	F1-Score
 + 클러스터링 된 샘플들을 labeling 하고, 먼저 bodilus 종에 대한 random forest 분류를 진행했습니다. parameter는 환경 변수, y값은 cluster label입니다. 
 + accuracy가 51%으로 모델 성능이 매우 좋지 못해 다른 종 / 다른 기법 등 다른 방법을 찾고 있습니다. 
 
-<a id="my-anchor"></a>
 # 0108 Weekly Report
 + 배준식 학생 연구 도움; random forest, lasso등 환경변수로 microbiome component가 바뀌는 연구 중에 있음.
 
@@ -460,3 +459,49 @@ Percentile|	Accuracy|	Precision|	Recall|	F1-Score
 + Metadata가 너무 단조로워 분류가 정확하지 않아 김보근 조교와 토의 후에 보완하도록 하겠습니다.
 + 현재 구축된 모델로는 기온이 microbiome composition에 가장 큰 영향을 끼치는 것으로 확인했습니다.
 + 관련된 연구 과정 및 코드는 "/eevee/val/jjpark/jsbae/models" 디렉토리에 있습니다. 
+
+<a id="my-anchor"></a>
+# 0122 Weekly Report
++ 배준식 학생 연구 도움.
+
+## 배준식 학생 연구 도움
++ 모든 fecal 소똥구리 샘플 261개에 대해, hierical clustering - labeling - model construction을 하는 pipeline코드를 만들고, parameter 별 accuracy, oob score, min-cluster 등을 조사했습니다.
++ 모든 샘플로 전환한 이유는, genus level로 내려갔을 때, 샘플의 채집 site가 단조로워 meta data가 discrete한 문제가 있어, accuracy가 1.0이 나왔습니다.
+
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/3750085b-d23d-4dea-9317-da6a2837e351)
+
+ + hierical clustering output
+
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/06effa27-58e9-4aed-bd9e-76fa77a0fee1)
+
++ 800개의 random forest model을 만들었고, 아래 나열한 기준에 따른 최적화 된 모델을 선정했습니다.
+ + X축을 cutting distance (hierical clustering의 y축), Y축을 minimum cluster length (5이면, 4개이하의 cluster와, 그에 포함되는 샘플을 discard.) 으로 설정함.
+ + filtering 조건; discard 되지 않은 sample이 전체 샘플 261개 중 75%에 해당하는 195개 이상, accuracy 0.7 이상.
+ + filtered 된 model 중 가장 낮은 distance를 갖는 parameter 선정
+
++ 최종적으로, 1.36 distance cutting, 6 min-cluster를 선정했고, 해당 rdm의 top importance feature은 bio 10, bio 11, bio 6.
+
++ Accuracy 0.7, Passed sample 196, Passed cluster 8 (높은 distance, 낮은 min-cluster의 경우 크게 2개의 cluster만 나오기 때문에 reliable하지 않음.) 을 통화가는 23개의 model에 대한 top 1 feature importance는 아래와 같음. 
+
+Feature | Count
+-|-
+bio10 |	22
+
++ 23개의 모델 중 top 3 feature importance는 아래와 같음.
+
+Feature | Count
+-|-
+bio10 |	23
+bio8	 | 22
+bio7 |	19
+bio5 |	2
+bio11 |	1
+bio6	 | 1
+bio1	| 1
+bio7 |	1
+
++ 중간 결과 : bio 11이 1년 중 가장 따듯한 계절의 기온임. Ecology하게 설명할 수 있는 데이터로, 다른 모델을 통해서 reliability를 높일 예정임.
++ 추후 연구 계획
+ + bio data가 중복되는 게 많아서, collaspe하여 축약된 모델을 다시 구축하고자함.
+ + 다른 clustering method를 사용하여, clustering에 영향끼치는게 species인지, cite (ecological difference)인지 통계검정을 하고자함.
+ + 앞선 결과가 species 가 아닌 site dependence로 나올경우, 각 site의 representative sequence를 뽑아서, site representative bacteria의 생리적 특성을 추가적으로 설명하고자함. 
