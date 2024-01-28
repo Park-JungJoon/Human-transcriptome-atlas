@@ -505,3 +505,52 @@ bio7 |	1
  + bio data가 중복되는 게 많아서, collaspe하여 축약된 모델을 다시 구축하고자함.
  + 다른 clustering method를 사용하여, clustering에 영향끼치는게 species인지, cite (ecological difference)인지 통계검정을 하고자함.
  + 앞선 결과가 species 가 아닌 site dependence로 나올경우, 각 site의 representative sequence를 뽑아서, site representative bacteria의 생리적 특성을 추가적으로 설명하고자함. 
+
+
+
+<a id="my-anchor"></a>
+## 배준식 학생 연구 도움
++ "/panpyro/alfa/jjpark/jsbae","/eevee/val/jjpark/jsbae/all_data/kmean/" 디렉토리에 배준식 학생 연구 관련 작업물이 저장되어있습니다.
++ K-mean clustering, DBscan 등 여러 알고리즘을 사용해서, host species, site type, site 중 어떤 factor가 기존 clustering과 상관관계가 있는지 ARI 계산을 했습니다.
+
+## ARI 분석
+### K-mean Clustering
++ Option : KMeans(n_clusters=10, random_state=42)
+
+ARI for Subfamily: 0.07951583300031742
+ARI for Site: 0.17822531619113155
+ARI for Exact Site : 0.10278607430066741
+
+### DBscan Clustering
++ Option : dbscan = DBSCAN(metric="precomputed", eps=0.7, min_samples=5)
++ 사전에 계산된 bray-curtis matrix를 input으로 사용했습니다.
++ Hyperparameter optimization을 통해서, eps와 min_samples를 조정했습니다.
+
+Cluster numb | Count
+-|-
+-1|80
+0|8
+1|30
+2|7
+3|7
+4|5
+5|17
+6|94
+7|6
+8|7
+
+ARI for Subfamily: 0.07951583300031742
+ARI for Site Type: 0.17822531619113155
+ARI for Exact Site : 0.10359277586690113
+
+ARI 가 0.2 이상으로 reliable하지 않지만, 두 clustering algorithm에서 모두 site type > site > host subfamily의 경향을 나타냅니다. 
+추후 input data를 genus level로 올려서 높은 ARI를 갖게 조정하는 연구중에 있습니다. 
+
+### UMAP Projection 
++ Input을 raw SV count으로 UMAP projection을 했습니다.
+
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/d786ae89-d310-4564-ae63-3e759d7790a4)
+
+![image](https://github.com/Park-JungJoon/Human-transcriptome-atlas/assets/97942772/353cd3b1-b73e-4200-abb3-51233a20609b)
+
+3D로 확인해봤을 때, 먼저 Site type별 clustering이 되고, 그 안에서 host subfaimly별로 clustering 되는 경향입니다. 
